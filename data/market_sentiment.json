@@ -1,0 +1,827 @@
+[
+  {
+    "symbol": "CL",
+    "name": "Crude Oil Futures (WTI)",
+    "sentimentScore": 12,
+    "bias": "Mildly bullish",
+    "confidence": "Low",
+    "lastUpdated": "2026-06-22 10:51",
+    "summary": "PLACEHOLDER ASSESSMENT. The numeric score, price levels and positioning figures below are illustrative placeholders, not live readings — replace them after reviewing current EIA/OPEC/IEA data and CFTC positioning. Structurally, crude sentiment is a tug-of-war between supply-side risk premium (OPEC+ policy, geopolitics, inventory draws) and demand-side caution (China growth, a firm USD, and global growth signals). With placeholder inputs the framework leans mildly bullish, but confidence is Low because no live data has been wired in for this run.",
+    "macroContext": "Crude is highly sensitive to the U.S. dollar and real rates (a stronger USD and higher real yields are typically headwinds), to global growth expectations, and to China — the largest marginal importer. Watch DXY, the front-end of the U.S. curve, and China PMIs/imports. OBSERVED vs INFERRED: the directional sensitivities are observed/structural; the current magnitude is inferred and unquantified in this placeholder run.",
+    "newsContext": "Energy newsflow is dominated by OPEC+ production decisions, geopolitical supply disruptions (Middle East, Russia sanctions, shipping/Strait risk), refinery outages and weekly inventory headlines. No single headline should drive the read — look for convergence across EIA data, OPEC/IEA reports and multiple wires.",
+    "socialContext": "Retail/social discussion (StockTwits $CL_F, TradingView ideas, energy X/Twitter, r/oil and r/commodities) tends to amplify geopolitical spikes and inventory surprises. Treat as a contrarian/contextual signal only; do not rely on any single influencer or post. NOT MEASURED in this run — placeholder.",
+    "whatWouldChange": "HIGHER: surprise OPEC+ cuts or extended quotas, sustained large inventory draws, a credible supply disruption, a weaker USD, or improving China demand. LOWER: OPEC+ unwinding cuts/raising output, persistent inventory builds, demand downgrades from EIA/IEA, a stronger USD/higher real rates, or a global growth scare.",
+    "subScores": [
+      {
+        "name": "Supply outlook",
+        "score": 3,
+        "reasoning": "PLACEHOLDER. OBSERVED: OPEC+ retains spare capacity and non-OPEC (US/Brazil/Guyana) supply has been resilient. INFERRED: modest net support pending the latest STEO/OMR balances. Update with current EIA STEO supply figures.",
+        "evidenceStrength": "Low"
+      },
+      {
+        "name": "Demand outlook",
+        "score": -2,
+        "reasoning": "PLACEHOLDER. OBSERVED: China demand growth has been the key swing variable and global-growth signals are mixed. INFERRED: slight drag. Update with EIA/IEA demand revisions and China import data.",
+        "evidenceStrength": "Low"
+      },
+      {
+        "name": "Inventory trend",
+        "score": 4,
+        "reasoning": "PLACEHOLDER. Weekly EIA crude + product stocks and Cushing levels drive near-term price. INFERRED a draw-leaning bias here; replace with the latest Weekly Petroleum Status Report.",
+        "evidenceStrength": "Low"
+      },
+      {
+        "name": "OPEC+ / geopolitical risk",
+        "score": 5,
+        "reasoning": "PLACEHOLDER. OBSERVED: an active geopolitical risk premium (Middle East, sanctions, shipping) and OPEC+ policy optionality skew tail risks to the upside. Magnitude unquantified — update around OPEC+ meetings and live events.",
+        "evidenceStrength": "Low"
+      },
+      {
+        "name": "USD / rates pressure",
+        "score": -3,
+        "reasoning": "PLACEHOLDER. OBSERVED structural inverse link to USD and real rates. INFERRED a modest headwind. Update with current DXY and real-yield levels.",
+        "evidenceStrength": "Low"
+      },
+      {
+        "name": "Positioning",
+        "score": 2,
+        "reasoning": "PLACEHOLDER. CFTC managed-money net length and producer hedging matter but EXACT NUMBERS ARE NOT AVAILABLE in this run. Update from the weekly CFTC COT report; treat as unavailable until then.",
+        "evidenceStrength": "Unavailable"
+      },
+      {
+        "name": "Technical trend",
+        "score": 1,
+        "reasoning": "PLACEHOLDER. No live price wired in. Trend/levels are manual-update placeholders — do not trade off them. Update from CME/charting once price data is connected.",
+        "evidenceStrength": "Unavailable"
+      },
+      {
+        "name": "News/social sentiment",
+        "score": 1,
+        "reasoning": "PLACEHOLDER. Convergence across wires/social NOT MEASURED in this run. Update after scanning multiple independent sources; avoid single-source signals.",
+        "evidenceStrength": "Unavailable"
+      },
+      {
+        "name": "Volatility / risk premium",
+        "score": 2,
+        "reasoning": "PLACEHOLDER. OVX-style implied vol and term-structure (backwardation vs contango) reflect supply tightness. INFERRED a mild risk premium. Update with current OVX and curve shape.",
+        "evidenceStrength": "Low"
+      },
+      {
+        "name": "Cross-market confirmation",
+        "score": -1,
+        "reasoning": "PLACEHOLDER. Cross-checks vs energy equities (XLE), Brent–WTI spread and broad commodities. INFERRED slightly non-confirming. Update with live cross-asset reads.",
+        "evidenceStrength": "Low"
+      }
+    ],
+    "drivers": [
+      {
+        "driver": "Weekly inventory draws/builds",
+        "category": "Inventories",
+        "directionalImpact": "Mixed",
+        "strength": "High",
+        "evidence": "EIA Weekly Petroleum Status Report drives near-term price; direction depends on the latest print (PLACEHOLDER — update weekly).",
+        "timeHorizon": "1-4 weeks",
+        "sourceUrl": "https://www.eia.gov/petroleum/supply/weekly/"
+      },
+      {
+        "driver": "OPEC+ production policy",
+        "category": "OPEC+",
+        "directionalImpact": "Mixed",
+        "strength": "High",
+        "evidence": "Quota decisions and spare-capacity guidance set the supply baseline. Direction depends on the latest meeting outcome.",
+        "timeHorizon": "1-6 months",
+        "sourceUrl": "https://www.opec.org/opec_web/en/publications/338.htm"
+      },
+      {
+        "driver": "Geopolitical supply risk",
+        "category": "Geopolitics",
+        "directionalImpact": "Bullish",
+        "strength": "Medium",
+        "evidence": "Middle East tensions, Russia sanctions and shipping/Strait-of-Hormuz risk add an upside tail premium.",
+        "timeHorizon": "Event-driven",
+        "sourceUrl": "https://www.iea.org/topics/oil-market-report"
+      },
+      {
+        "driver": "China demand trajectory",
+        "category": "China demand",
+        "directionalImpact": "Mixed",
+        "strength": "High",
+        "evidence": "China is the largest marginal importer; import volumes and stimulus drive the demand read.",
+        "timeHorizon": "1-6 months",
+        "sourceUrl": "https://www.eia.gov/international/analysis/country/CHN"
+      },
+      {
+        "driver": "US dollar / real rates",
+        "category": "USD",
+        "directionalImpact": "Bearish",
+        "strength": "Medium",
+        "evidence": "A firmer USD and higher real yields are structural headwinds for dollar-priced crude.",
+        "timeHorizon": "1-3 months",
+        "sourceUrl": "https://fred.stlouisfed.org/"
+      },
+      {
+        "driver": "Non-OPEC supply growth",
+        "category": "Supply",
+        "directionalImpact": "Bearish",
+        "strength": "Medium",
+        "evidence": "Resilient US shale, Brazil and Guyana output can cap rallies; see EIA STEO supply balances.",
+        "timeHorizon": "3-12 months",
+        "sourceUrl": "https://www.eia.gov/outlooks/steo/"
+      },
+      {
+        "driver": "Refining margins (cracks)",
+        "category": "Refining margins",
+        "directionalImpact": "Mixed",
+        "strength": "Medium",
+        "evidence": "Crack spreads and maintenance season influence refiner crude demand and product pull.",
+        "timeHorizon": "1-8 weeks",
+        "sourceUrl": "https://www.eia.gov/petroleum/weekly/"
+      },
+      {
+        "driver": "Managed-money positioning",
+        "category": "Positioning",
+        "directionalImpact": "Mixed",
+        "strength": "Medium",
+        "evidence": "Crowded net length raises pullback risk; light positioning leaves upside fuel. EXACT FIGURES UNAVAILABLE — update from CFTC COT.",
+        "timeHorizon": "1-8 weeks",
+        "sourceUrl": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm"
+      }
+    ],
+    "risks": [
+      {
+        "risk": "OPEC+ unwinds cuts faster than expected",
+        "impact": "Bearish",
+        "description": "An accelerated return of barrels would loosen balances and pressure prices."
+      },
+      {
+        "risk": "China demand disappoints",
+        "impact": "Bearish",
+        "description": "Weaker-than-expected Chinese imports/stimulus removes a key pillar of demand."
+      },
+      {
+        "risk": "Geopolitical de-escalation",
+        "impact": "Bearish",
+        "description": "A reduction in supply-disruption risk would deflate the risk premium."
+      },
+      {
+        "risk": "Stronger USD / higher-for-longer rates",
+        "impact": "Bearish",
+        "description": "Tighter financial conditions and a firm dollar weigh on commodities."
+      },
+      {
+        "risk": "Supply shock to the upside",
+        "impact": "Bullish",
+        "description": "An unexpected outage or escalation could spike prices against a short-leaning view."
+      }
+    ],
+    "narratives": [
+      {
+        "name": "Tight supply risk from geopolitics",
+        "summary": "An ongoing geopolitical risk premium (Middle East, sanctions, shipping) keeps a floor under crude.",
+        "implication": "Bullish",
+        "evidence": "Headline-driven spikes; backwardated curve at times; elevated freight/insurance.",
+        "confirmation": "Actual supply disruptions, falling exports from a key producer, widening backwardation.",
+        "invalidation": "Sustained de-escalation, no real barrels lost, premium bleeds out.",
+        "timeHorizon": "Short to medium term"
+      },
+      {
+        "name": "Demand concern from China slowdown",
+        "summary": "Soft Chinese growth and property weakness cap the demand outlook.",
+        "implication": "Bearish",
+        "evidence": "Mixed China PMIs, uneven import volumes, IEA/EIA demand revisions.",
+        "confirmation": "Falling Chinese crude imports, downgraded demand forecasts.",
+        "invalidation": "Stimulus-driven rebound, stronger imports, upgraded demand.",
+        "timeHorizon": "Medium term"
+      },
+      {
+        "name": "Inventory draws supporting near-term prices",
+        "summary": "Sustained stock draws (incl. Cushing) signal a tightening physical market.",
+        "implication": "Bullish",
+        "evidence": "Consecutive EIA crude/product draws (PLACEHOLDER — verify weekly).",
+        "confirmation": "Multi-week draws, falling Cushing, firm prompt spreads.",
+        "invalidation": "Persistent builds, rising Cushing, weakening prompt structure.",
+        "timeHorizon": "1-4 weeks"
+      },
+      {
+        "name": "OPEC+ spare-capacity uncertainty",
+        "summary": "Debate over true spare capacity and policy intent creates two-way risk.",
+        "implication": "Mixed",
+        "evidence": "Conflicting guidance on quota unwinds vs extensions.",
+        "confirmation": "Clear quota policy direction at the next meeting.",
+        "invalidation": "Policy surprise in either direction.",
+        "timeHorizon": "1-6 months"
+      },
+      {
+        "name": "Stronger USD pressuring commodities",
+        "summary": "A firm dollar and higher real rates weigh on dollar-priced crude.",
+        "implication": "Bearish",
+        "evidence": "DXY strength alongside hawkish Fed pricing.",
+        "confirmation": "Rising DXY/real yields with crude underperforming.",
+        "invalidation": "USD rollover / dovish Fed repricing.",
+        "timeHorizon": "1-3 months"
+      }
+    ],
+    "technicalContext": {
+      "currentPrice": null,
+      "trend": "PLACEHOLDER — live price not connected (range assumed)",
+      "supportLevels": [
+        "PLACEHOLDER — add prior swing lows / round numbers"
+      ],
+      "resistanceLevels": [
+        "PLACEHOLDER — add prior swing highs / round numbers"
+      ],
+      "movingAverages": "PLACEHOLDER — note position vs 50/100/200-day once price is connected",
+      "momentum": "Unavailable — update RSI/MACD context manually",
+      "volatility": "Unavailable — update with OVX / ATR",
+      "invalidationLevels": [
+        "PLACEHOLDER — define the level that flips the near-term view"
+      ]
+    },
+    "positioning": {
+      "summary": "Framework: monitor CFTC managed-money net length (crowding risk), producer/merchant hedging, options skew (calls vs puts), and energy-equity/ETF flows (e.g. XLE, USO). Crowded longs raise pullback risk; light positioning leaves room to rally.",
+      "available": false,
+      "limitations": "Exact CFTC Commitments of Traders, options-skew and ETF-flow numbers are NOT available in this run. Update from the weekly CFTC COT report and exchange/ETF data, then set available=true."
+    },
+    "catalysts": [
+      {
+        "date": "PLACEHOLDER-WED-WEEKLY",
+        "market": "CL",
+        "event": "EIA Weekly Petroleum Status Report (crude inventories)",
+        "whyItMatters": "Weekly stock changes drive near-term supply/demand balance and price.",
+        "bullishScenario": "Larger-than-expected crude/product draw",
+        "bearishScenario": "Larger-than-expected build",
+        "sourceUrl": "https://www.eia.gov/petroleum/supply/weekly/"
+      },
+      {
+        "date": "PLACEHOLDER-TUE-WEEKLY",
+        "market": "CL",
+        "event": "API Weekly Statistical Bulletin (inventories)",
+        "whyItMatters": "Previews the EIA report; can move price after the close.",
+        "bullishScenario": "API reports a draw",
+        "bearishScenario": "API reports a build",
+        "sourceUrl": "https://www.api.org/products-and-services/statistics"
+      },
+      {
+        "date": "PLACEHOLDER-MONTHLY",
+        "market": "CL",
+        "event": "OPEC+ meeting / production decision",
+        "whyItMatters": "Sets the supply baseline via quotas and spare-capacity guidance.",
+        "bullishScenario": "Cuts extended or deepened",
+        "bearishScenario": "Output increased / cuts unwound",
+        "sourceUrl": "https://www.opec.org/opec_web/en/publications/338.htm"
+      },
+      {
+        "date": "PLACEHOLDER-MONTHLY",
+        "market": "CL",
+        "event": "EIA STEO + IEA/OPEC monthly reports",
+        "whyItMatters": "Update global supply/demand balances and forecasts.",
+        "bullishScenario": "Tighter balances / demand upgrades",
+        "bearishScenario": "Looser balances / demand downgrades",
+        "sourceUrl": "https://www.eia.gov/outlooks/steo/"
+      },
+      {
+        "date": "PLACEHOLDER-EVENT",
+        "market": "CL",
+        "event": "Geopolitical / supply-disruption events",
+        "whyItMatters": "Can add or remove a risk premium quickly.",
+        "bullishScenario": "Escalation threatening supply",
+        "bearishScenario": "De-escalation / no barrels lost",
+        "sourceUrl": "https://www.iea.org/topics/oil-market-report"
+      }
+    ],
+    "scenarios": {
+      "bullish": {
+        "requirements": [
+          "Sustained inventory draws",
+          "Supportive OPEC+ policy (cuts held/deepened)",
+          "Stable-to-improving China demand",
+          "Steady-to-weaker USD"
+        ],
+        "confirmationSignals": [
+          "Multi-week EIA draws + falling Cushing",
+          "Widening backwardation",
+          "Break and hold above resistance (PLACEHOLDER level)"
+        ],
+        "keyLevels": [
+          "PLACEHOLDER — upside trigger / target levels"
+        ],
+        "risks": [
+          "OPEC+ output surprise",
+          "China demand miss",
+          "USD spike"
+        ]
+      },
+      "bearish": {
+        "requirements": [
+          "Persistent inventory builds",
+          "OPEC+ unwinding cuts / raising output",
+          "China demand disappointment",
+          "Stronger USD / higher real rates"
+        ],
+        "confirmationSignals": [
+          "Consecutive EIA builds + rising Cushing",
+          "Curve flattening into contango",
+          "Break and hold below support (PLACEHOLDER level)"
+        ],
+        "keyLevels": [
+          "PLACEHOLDER — downside trigger / target levels"
+        ],
+        "risks": [
+          "Sudden supply shock",
+          "Geopolitical escalation"
+        ]
+      },
+      "neutral": {
+        "requirements": [
+          "Balanced inventories",
+          "No OPEC+ policy surprise",
+          "Stable USD",
+          "No major geopolitical change"
+        ],
+        "rangeConditions": [
+          "Choppy weekly data",
+          "Risk premium neither building nor bleeding",
+          "Price oscillating between PLACEHOLDER support and resistance"
+        ],
+        "volatilityRisks": [
+          "Inventory-day spikes",
+          "Headline-driven whipsaws"
+        ],
+        "rangeBreakSignals": [
+          "Decisive close beyond the range with follow-through volume",
+          "Step-change in OPEC+ policy or geopolitics"
+        ]
+      }
+    },
+    "sources": [
+      {
+        "title": "Weekly Petroleum Status Report",
+        "publisher": "U.S. EIA",
+        "url": "https://www.eia.gov/petroleum/supply/weekly/",
+        "date": "ongoing"
+      },
+      {
+        "title": "Short-Term Energy Outlook (STEO)",
+        "publisher": "U.S. EIA",
+        "url": "https://www.eia.gov/outlooks/steo/",
+        "date": "monthly"
+      },
+      {
+        "title": "Oil Market Report",
+        "publisher": "IEA",
+        "url": "https://www.iea.org/topics/oil-market-report",
+        "date": "monthly"
+      },
+      {
+        "title": "Monthly Oil Market Report & meeting schedule",
+        "publisher": "OPEC",
+        "url": "https://www.opec.org/opec_web/en/publications/338.htm",
+        "date": "monthly"
+      },
+      {
+        "title": "Commitments of Traders (COT)",
+        "publisher": "CFTC",
+        "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
+        "date": "weekly"
+      },
+      {
+        "title": "Light Sweet Crude Oil (CL) futures",
+        "publisher": "CME Group",
+        "url": "https://www.cmegroup.com/markets/energy/crude-oil/light-sweet-crude.html",
+        "date": "live"
+      }
+    ]
+  },
+  {
+    "symbol": "ES",
+    "name": "S&P 500 E-mini Futures",
+    "sentimentScore": 6,
+    "bias": "Neutral",
+    "confidence": "Low",
+    "lastUpdated": "2026-06-22 10:51",
+    "summary": "PLACEHOLDER ASSESSMENT. The numeric score, index levels and positioning figures below are illustrative placeholders, not live readings — replace them after reviewing current earnings trends, Fed/rates pricing, inflation/labor data, breadth and volatility. Structurally, ES sentiment hinges on the interplay of earnings resilience and the rates/Fed backdrop, with mega-cap/AI leadership, breadth and liquidity as key swing factors. With placeholder inputs the framework reads roughly neutral; confidence is Low because no live data has been wired in.",
+    "macroContext": "Equity-index sentiment is driven by the rates/discount-rate regime (Fed policy, real yields, the 10Y), the inflation path (CPI/PCE), and growth/labor data (NFP, ISM, GDP, jobless claims). Tighter financial conditions compress multiples; easing supports them. Watch the 2Y/10Y, financial-conditions indices and credit spreads.",
+    "newsContext": "Newsflow centers on Fed communication, the inflation/labor data cycle, mega-cap earnings (especially AI capex narratives), and credit/liquidity headlines. Avoid over-weighting any single print or pundit — confirm across the data calendar and multiple outlets.",
+    "socialContext": "Retail/social discussion ($ES_F and $SPX on StockTwits, r/wallstreetbets, r/investing, FinTwit, TradingView) tends to swing with momentum and can mark sentiment extremes. Use as contextual/contrarian color only, never as a standalone signal. NOT MEASURED in this run — placeholder.",
+    "whatWouldChange": "HIGHER: dovish Fed repricing / falling yields, cooling inflation with intact growth, broadening breadth, resilient mega-cap earnings, easing financial conditions, tight credit spreads. LOWER: hawkish repricing / rising real yields, inflation reacceleration, labor or growth deterioration, narrowing breadth, widening credit spreads, a volatility/liquidity shock.",
+    "subScores": [
+      {
+        "name": "Earnings outlook",
+        "score": 4,
+        "reasoning": "PLACEHOLDER. OBSERVED: index EPS has been carried by mega-cap/AI names. INFERRED modest support. Update with the latest earnings-season beat rates and forward-EPS revisions.",
+        "evidenceStrength": "Low"
+      },
+      {
+        "name": "Rates / Fed policy",
+        "score": -3,
+        "reasoning": "PLACEHOLDER. OBSERVED: policy/real-rate regime is the dominant macro driver. INFERRED a mild headwind pending live FOMC pricing. Update with current FOMC guidance and futures-implied path.",
+        "evidenceStrength": "Low"
+      },
+      {
+        "name": "Inflation trend",
+        "score": 2,
+        "reasoning": "PLACEHOLDER. OBSERVED: disinflation vs reacceleration risk is pivotal for multiples. INFERRED slightly supportive. Update with the latest CPI/PCE prints.",
+        "evidenceStrength": "Low"
+      },
+      {
+        "name": "Growth / labor data",
+        "score": 2,
+        "reasoning": "PLACEHOLDER. OBSERVED: soft-landing vs slowdown debate. INFERRED mildly positive. Update with NFP, jobless claims, ISM and GDP.",
+        "evidenceStrength": "Low"
+      },
+      {
+        "name": "Market breadth",
+        "score": -4,
+        "reasoning": "PLACEHOLDER. OBSERVED: leadership has at times been narrow (mega-cap concentration). INFERRED a drag/fragility flag. Update with advance/decline, % above 200-DMA, equal- vs cap-weighted spread.",
+        "evidenceStrength": "Low"
+      },
+      {
+        "name": "Volatility / credit conditions",
+        "score": 1,
+        "reasoning": "PLACEHOLDER. OBSERVED: low VIX + tight credit spreads = risk-on; spikes/widening = risk-off. INFERRED mildly benign. Update with VIX and IG/HY spreads.",
+        "evidenceStrength": "Low"
+      },
+      {
+        "name": "Positioning",
+        "score": -2,
+        "reasoning": "PLACEHOLDER. CFTC futures positioning, dealer gamma, put/call and systematic (CTA/vol-target) exposure matter, but EXACT FIGURES ARE NOT AVAILABLE. Update from CFTC COT and options data; treat as unavailable until then.",
+        "evidenceStrength": "Unavailable"
+      },
+      {
+        "name": "Technical trend",
+        "score": 3,
+        "reasoning": "PLACEHOLDER. No live price wired in. Trend/levels are manual-update placeholders. Update from CME/charting once price data is connected.",
+        "evidenceStrength": "Unavailable"
+      },
+      {
+        "name": "News/social sentiment",
+        "score": 1,
+        "reasoning": "PLACEHOLDER. Convergence across outlets/social NOT MEASURED in this run. Update after scanning multiple independent sources.",
+        "evidenceStrength": "Unavailable"
+      },
+      {
+        "name": "Liquidity / flows",
+        "score": 2,
+        "reasoning": "PLACEHOLDER. OBSERVED: financial conditions, reserves/liquidity and fund flows shape the bid. INFERRED mildly supportive. Update with FCI, fund-flow and liquidity proxies.",
+        "evidenceStrength": "Low"
+      }
+    ],
+    "drivers": [
+      {
+        "driver": "Fed policy path / real rates",
+        "category": "Fed policy",
+        "directionalImpact": "Mixed",
+        "strength": "High",
+        "evidence": "The discount-rate regime is the dominant macro driver of index multiples; direction depends on the latest FOMC guidance and implied path.",
+        "timeHorizon": "1-6 months",
+        "sourceUrl": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+      },
+      {
+        "driver": "Inflation path (CPI/PCE)",
+        "category": "Inflation",
+        "directionalImpact": "Mixed",
+        "strength": "High",
+        "evidence": "Disinflation supports multiples; reacceleration is a key downside risk. Update with the latest releases.",
+        "timeHorizon": "Monthly",
+        "sourceUrl": "https://www.bls.gov/cpi/"
+      },
+      {
+        "driver": "Mega-cap / AI earnings & capex",
+        "category": "AI / mega-cap tech",
+        "directionalImpact": "Bullish",
+        "strength": "High",
+        "evidence": "A handful of mega-caps drive a large share of index EPS and returns; AI-capex narrative is central.",
+        "timeHorizon": "Quarterly",
+        "sourceUrl": "https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.html"
+      },
+      {
+        "driver": "Market breadth",
+        "category": "Market breadth",
+        "directionalImpact": "Bearish",
+        "strength": "Medium",
+        "evidence": "Narrow leadership raises fragility; broadening participation is healthier. Update with A/D, % above 200-DMA.",
+        "timeHorizon": "1-8 weeks",
+        "sourceUrl": "https://fred.stlouisfed.org/"
+      },
+      {
+        "driver": "Labor & growth data",
+        "category": "Labor market",
+        "directionalImpact": "Mixed",
+        "strength": "High",
+        "evidence": "NFP, jobless claims, ISM and GDP define the soft-landing vs slowdown read.",
+        "timeHorizon": "Monthly",
+        "sourceUrl": "https://www.bls.gov/news.release/empsit.toc.htm"
+      },
+      {
+        "driver": "Treasury yields / curve",
+        "category": "Treasury yields",
+        "directionalImpact": "Mixed",
+        "strength": "High",
+        "evidence": "The 10Y and real yields move the discount rate; auctions and term premium matter.",
+        "timeHorizon": "1-3 months",
+        "sourceUrl": "https://fred.stlouisfed.org/"
+      },
+      {
+        "driver": "Credit spreads",
+        "category": "Credit spreads",
+        "directionalImpact": "Mixed",
+        "strength": "Medium",
+        "evidence": "Tight IG/HY spreads = risk-on; widening warns of stress.",
+        "timeHorizon": "1-3 months",
+        "sourceUrl": "https://fred.stlouisfed.org/"
+      },
+      {
+        "driver": "Volatility regime (VIX)",
+        "category": "Volatility",
+        "directionalImpact": "Mixed",
+        "strength": "Medium",
+        "evidence": "Low VIX supports carry/risk-taking; spikes coincide with drawdowns.",
+        "timeHorizon": "Days-weeks",
+        "sourceUrl": "https://www.cboe.com/tradable_products/vix/"
+      },
+      {
+        "driver": "Liquidity / financial conditions",
+        "category": "Liquidity",
+        "directionalImpact": "Mixed",
+        "strength": "Medium",
+        "evidence": "Easier financial conditions and ample liquidity support the bid; tightening pressures it.",
+        "timeHorizon": "1-6 months",
+        "sourceUrl": "https://fred.stlouisfed.org/"
+      }
+    ],
+    "risks": [
+      {
+        "risk": "Inflation reaccelerates",
+        "impact": "Bearish",
+        "description": "A hotter CPI/PCE path forces hawkish repricing and pressures multiples."
+      },
+      {
+        "risk": "Hawkish Fed / higher-for-longer",
+        "impact": "Bearish",
+        "description": "Rising real yields compress valuations, especially for long-duration growth names."
+      },
+      {
+        "risk": "Breadth stays narrow / mega-cap stumble",
+        "impact": "Bearish",
+        "description": "Concentration means a few names falling can drag the index disproportionately."
+      },
+      {
+        "risk": "Credit-spread widening / liquidity shock",
+        "impact": "Bearish",
+        "description": "Stress in credit or funding markets typically coincides with equity drawdowns."
+      },
+      {
+        "risk": "Labor / growth deterioration",
+        "impact": "Bearish",
+        "description": "A sharper slowdown undermines the soft-landing earnings narrative."
+      },
+      {
+        "risk": "Dovish pivot / soft-landing confirmation",
+        "impact": "Bullish",
+        "description": "Falling yields with intact growth would support a melt-up against a bearish view."
+      }
+    ],
+    "narratives": [
+      {
+        "name": "Soft landing / earnings resilience",
+        "summary": "Growth holds up and earnings keep beating, supporting the index.",
+        "implication": "Bullish",
+        "evidence": "Resilient labor data, positive EPS revisions, healthy margins.",
+        "confirmation": "Continued beats, rising forward EPS, stable jobless claims.",
+        "invalidation": "Earnings misses, negative revisions, labor deterioration.",
+        "timeHorizon": "Medium term"
+      },
+      {
+        "name": "Higher-for-longer rates pressure multiples",
+        "summary": "Sticky inflation keeps policy/real rates elevated, capping valuations.",
+        "implication": "Bearish",
+        "evidence": "Firm CPI/PCE, hawkish Fed tone, elevated real yields.",
+        "confirmation": "Upside inflation surprises, rising 10Y real yield, hawkish dots.",
+        "invalidation": "Disinflation resumes, dovish repricing, falling yields.",
+        "timeHorizon": "1-6 months"
+      },
+      {
+        "name": "AI capex and mega-cap leadership",
+        "summary": "AI-driven capex and mega-cap earnings carry index returns.",
+        "implication": "Bullish",
+        "evidence": "Strong mega-cap guidance, rising AI-related capex and revenue.",
+        "confirmation": "Continued mega-cap beats and capex follow-through.",
+        "invalidation": "AI-spend digestion, mega-cap guidance cuts.",
+        "timeHorizon": "Quarterly"
+      },
+      {
+        "name": "Breadth weakness under the index surface",
+        "summary": "Narrow leadership masks weakness in the average stock.",
+        "implication": "Bearish",
+        "evidence": "Cap-weighted outperforming equal-weighted; few stocks above 200-DMA.",
+        "confirmation": "Deteriorating A/D, widening cap- vs equal-weight gap.",
+        "invalidation": "Broadening participation, improving A/D line.",
+        "timeHorizon": "1-8 weeks"
+      },
+      {
+        "name": "Inflation reacceleration risk",
+        "summary": "A second inflation wave would derail the disinflation/rate-cut path.",
+        "implication": "Bearish",
+        "evidence": "Sticky services inflation, firming commodities, easy financial conditions.",
+        "confirmation": "Consecutive upside CPI/PCE surprises.",
+        "invalidation": "Sustained cooling across core measures.",
+        "timeHorizon": "Medium term"
+      }
+    ],
+    "technicalContext": {
+      "currentPrice": null,
+      "trend": "PLACEHOLDER — live price not connected (uptrend assumed for framework)",
+      "supportLevels": [
+        "PLACEHOLDER — prior swing lows / breakout retests"
+      ],
+      "resistanceLevels": [
+        "PLACEHOLDER — prior highs / measured-move targets"
+      ],
+      "movingAverages": "PLACEHOLDER — note position vs 50/100/200-day once price is connected",
+      "momentum": "Unavailable — update RSI/MACD context manually",
+      "volatility": "Unavailable — update with VIX / ATR",
+      "invalidationLevels": [
+        "PLACEHOLDER — level that flips the near-term trend"
+      ]
+    },
+    "positioning": {
+      "summary": "Framework: monitor CFTC futures positioning (asset managers vs leveraged funds), dealer gamma (pinning vs accelerant), index put/call activity, the VIX regime, fund flows and systematic exposure (CTA trend, vol-target). Stretched long/gamma-short setups raise air-pocket risk.",
+      "available": false,
+      "limitations": "Exact CFTC COT, dealer-gamma, put/call, fund-flow and systematic-positioning estimates are NOT available in this run. Update from CFTC, options and flow data, then set available=true."
+    },
+    "catalysts": [
+      {
+        "date": "PLACEHOLDER-8WEEKS",
+        "market": "ES",
+        "event": "FOMC meeting & statement",
+        "whyItMatters": "Sets the policy-rate path and risk sentiment; SEP/dots quarterly.",
+        "bullishScenario": "Dovish guidance / cuts signaled",
+        "bearishScenario": "Hawkish hold / higher-for-longer",
+        "sourceUrl": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+      },
+      {
+        "date": "PLACEHOLDER-MONTHLY",
+        "market": "ES",
+        "event": "CPI inflation release",
+        "whyItMatters": "Key inflation gauge driving Fed expectations and yields.",
+        "bullishScenario": "Cooler-than-expected print",
+        "bearishScenario": "Hotter-than-expected print",
+        "sourceUrl": "https://www.bls.gov/cpi/"
+      },
+      {
+        "date": "PLACEHOLDER-MONTHLY",
+        "market": "ES",
+        "event": "PCE inflation (Fed's preferred gauge)",
+        "whyItMatters": "Directly informs the Fed's reaction function.",
+        "bullishScenario": "Core PCE cools",
+        "bearishScenario": "Core PCE firms",
+        "sourceUrl": "https://www.bea.gov/data/personal-consumption-expenditures-price-index"
+      },
+      {
+        "date": "PLACEHOLDER-1ST-FRIDAY",
+        "market": "ES",
+        "event": "Nonfarm Payrolls (Employment Situation)",
+        "whyItMatters": "Anchors the growth/labor and soft-landing read.",
+        "bullishScenario": "Goldilocks: solid jobs, cooling wages",
+        "bearishScenario": "Too hot (hawkish) or sharp deterioration (growth scare)",
+        "sourceUrl": "https://www.bls.gov/news.release/empsit.toc.htm"
+      },
+      {
+        "date": "PLACEHOLDER-WEEKLY",
+        "market": "ES",
+        "event": "Initial jobless claims",
+        "whyItMatters": "High-frequency labor pulse.",
+        "bullishScenario": "Low/stable claims (resilient labor)",
+        "bearishScenario": "Rising claims (slowdown signal)",
+        "sourceUrl": "https://www.dol.gov/ui/data.pdf"
+      },
+      {
+        "date": "PLACEHOLDER-MONTHLY",
+        "market": "ES",
+        "event": "ISM Manufacturing & Services PMI",
+        "whyItMatters": "Leading growth indicators.",
+        "bullishScenario": "Expansion (>50) with easing prices",
+        "bearishScenario": "Contraction with sticky prices",
+        "sourceUrl": "https://www.ismworld.org/supply-management-news-and-reports/reports/"
+      },
+      {
+        "date": "PLACEHOLDER-QUARTERLY",
+        "market": "ES",
+        "event": "Mega-cap earnings & triple-witching OpEx",
+        "whyItMatters": "Mega-cap results drive index EPS; quarterly OpEx affects positioning/flows.",
+        "bullishScenario": "Beats + raised guidance",
+        "bearishScenario": "Misses / guidance cuts; OpEx volatility",
+        "sourceUrl": "https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.html"
+      }
+    ],
+    "scenarios": {
+      "bullish": {
+        "requirements": [
+          "Cooling inflation with intact growth",
+          "Dovish-leaning Fed / falling real yields",
+          "Resilient mega-cap earnings",
+          "Broadening breadth",
+          "Tight credit spreads"
+        ],
+        "confirmationSignals": [
+          "Downside CPI/PCE surprises",
+          "10Y real yield rolling over",
+          "A/D line broadening",
+          "Break and hold above resistance (PLACEHOLDER level)"
+        ],
+        "keyLevels": [
+          "PLACEHOLDER — upside trigger / target levels"
+        ],
+        "risks": [
+          "Inflation surprise",
+          "Mega-cap guidance disappointment"
+        ]
+      },
+      "bearish": {
+        "requirements": [
+          "Inflation reaccelerates",
+          "Hawkish Fed / rising real yields",
+          "Breadth narrows / mega-cap stumble",
+          "Credit spreads widen"
+        ],
+        "confirmationSignals": [
+          "Upside CPI/PCE surprises",
+          "Rising 10Y real yield",
+          "VIX spike + spread widening",
+          "Break and hold below support (PLACEHOLDER level)"
+        ],
+        "keyLevels": [
+          "PLACEHOLDER — downside trigger / target levels"
+        ],
+        "risks": [
+          "Dovish surprise",
+          "Strong earnings reversing the move"
+        ]
+      },
+      "neutral": {
+        "requirements": [
+          "In-line inflation/labor data",
+          "Fed on hold with balanced tone",
+          "Stable yields and spreads"
+        ],
+        "rangeConditions": [
+          "Data neither hot nor cold",
+          "VIX subdued",
+          "Price oscillating between PLACEHOLDER support and resistance"
+        ],
+        "volatilityRisks": [
+          "CPI/FOMC-day spikes",
+          "OpEx-driven swings"
+        ],
+        "rangeBreakSignals": [
+          "Decisive close beyond the range with follow-through",
+          "Step-change in the Fed/inflation narrative"
+        ]
+      }
+    },
+    "sources": [
+      {
+        "title": "FOMC calendar & statements",
+        "publisher": "U.S. Federal Reserve",
+        "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "date": "ongoing"
+      },
+      {
+        "title": "Consumer Price Index (CPI)",
+        "publisher": "U.S. BLS",
+        "url": "https://www.bls.gov/cpi/",
+        "date": "monthly"
+      },
+      {
+        "title": "Personal Income & Outlays (PCE)",
+        "publisher": "U.S. BEA",
+        "url": "https://www.bea.gov/data/personal-consumption-expenditures-price-index",
+        "date": "monthly"
+      },
+      {
+        "title": "Employment Situation (NFP)",
+        "publisher": "U.S. BLS",
+        "url": "https://www.bls.gov/news.release/empsit.toc.htm",
+        "date": "monthly"
+      },
+      {
+        "title": "Commitments of Traders (COT)",
+        "publisher": "CFTC",
+        "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
+        "date": "weekly"
+      },
+      {
+        "title": "Cboe Volatility Index (VIX)",
+        "publisher": "Cboe",
+        "url": "https://www.cboe.com/tradable_products/vix/",
+        "date": "live"
+      },
+      {
+        "title": "E-mini S&P 500 (ES) futures",
+        "publisher": "CME Group",
+        "url": "https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.html",
+        "date": "live"
+      }
+    ]
+  }
+]

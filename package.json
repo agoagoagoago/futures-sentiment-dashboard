@@ -1,0 +1,32 @@
+{
+  "name": "futures-sentiment-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Market sentiment dashboard and research report for Crude Oil (CL) and S&P 500 E-mini (ES) futures. Research only, not financial advice.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "refresh": "tsx scripts/refresh-sentiment.ts",
+    "report": "tsx scripts/generate-report.ts"
+  },
+  "dependencies": {
+    "next": "^16.2.9",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@tailwindcss/postcss": "^4.1.8",
+    "@types/node": "^20.17.50",
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.5",
+    "eslint": "^9.28.0",
+    "eslint-config-next": "^16.2.9",
+    "postcss": "^8.5.4",
+    "tailwindcss": "^4.1.8",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}

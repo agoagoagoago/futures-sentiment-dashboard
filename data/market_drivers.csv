@@ -1,0 +1,18 @@
+symbol,driver,category,directional_impact,strength,evidence,time_horizon,source_url
+CL,Weekly inventory draws/builds,Inventories,Mixed,High,EIA Weekly Petroleum Status Report drives near-term price; direction depends on the latest print (PLACEHOLDER — update weekly).,1-4 weeks,https://www.eia.gov/petroleum/supply/weekly/
+CL,OPEC+ production policy,OPEC+,Mixed,High,Quota decisions and spare-capacity guidance set the supply baseline. Direction depends on the latest meeting outcome.,1-6 months,https://www.opec.org/opec_web/en/publications/338.htm
+CL,Geopolitical supply risk,Geopolitics,Bullish,Medium,"Middle East tensions, Russia sanctions and shipping/Strait-of-Hormuz risk add an upside tail premium.",Event-driven,https://www.iea.org/topics/oil-market-report
+CL,China demand trajectory,China demand,Mixed,High,China is the largest marginal importer; import volumes and stimulus drive the demand read.,1-6 months,https://www.eia.gov/international/analysis/country/CHN
+CL,US dollar / real rates,USD,Bearish,Medium,A firmer USD and higher real yields are structural headwinds for dollar-priced crude.,1-3 months,https://fred.stlouisfed.org/
+CL,Non-OPEC supply growth,Supply,Bearish,Medium,"Resilient US shale, Brazil and Guyana output can cap rallies; see EIA STEO supply balances.",3-12 months,https://www.eia.gov/outlooks/steo/
+CL,Refining margins (cracks),Refining margins,Mixed,Medium,Crack spreads and maintenance season influence refiner crude demand and product pull.,1-8 weeks,https://www.eia.gov/petroleum/weekly/
+CL,Managed-money positioning,Positioning,Mixed,Medium,Crowded net length raises pullback risk; light positioning leaves upside fuel. EXACT FIGURES UNAVAILABLE — update from CFTC COT.,1-8 weeks,https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm
+ES,Fed policy path / real rates,Fed policy,Mixed,High,The discount-rate regime is the dominant macro driver of index multiples; direction depends on the latest FOMC guidance and implied path.,1-6 months,https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+ES,Inflation path (CPI/PCE),Inflation,Mixed,High,Disinflation supports multiples; reacceleration is a key downside risk. Update with the latest releases.,Monthly,https://www.bls.gov/cpi/
+ES,Mega-cap / AI earnings & capex,AI / mega-cap tech,Bullish,High,A handful of mega-caps drive a large share of index EPS and returns; AI-capex narrative is central.,Quarterly,https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.html
+ES,Market breadth,Market breadth,Bearish,Medium,"Narrow leadership raises fragility; broadening participation is healthier. Update with A/D, % above 200-DMA.",1-8 weeks,https://fred.stlouisfed.org/
+ES,Labor & growth data,Labor market,Mixed,High,"NFP, jobless claims, ISM and GDP define the soft-landing vs slowdown read.",Monthly,https://www.bls.gov/news.release/empsit.toc.htm
+ES,Treasury yields / curve,Treasury yields,Mixed,High,The 10Y and real yields move the discount rate; auctions and term premium matter.,1-3 months,https://fred.stlouisfed.org/
+ES,Credit spreads,Credit spreads,Mixed,Medium,Tight IG/HY spreads = risk-on; widening warns of stress.,1-3 months,https://fred.stlouisfed.org/
+ES,Volatility regime (VIX),Volatility,Mixed,Medium,Low VIX supports carry/risk-taking; spikes coincide with drawdowns.,Days-weeks,https://www.cboe.com/tradable_products/vix/
+ES,Liquidity / financial conditions,Liquidity,Mixed,Medium,Easier financial conditions and ample liquidity support the bid; tightening pressures it.,1-6 months,https://fred.stlouisfed.org/

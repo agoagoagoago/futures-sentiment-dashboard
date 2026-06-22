@@ -1,0 +1,7 @@
+symbol,level,type,reason,invalidation_or_confirmation
+CL,PLACEHOLDER — add prior swing highs / round numbers,Resistance,Upside level / supply zone,Break + hold above confirms upside
+CL,PLACEHOLDER — add prior swing lows / round numbers,Support,Downside level / demand zone,Close below opens further downside
+CL,PLACEHOLDER — define the level that flips the near-term view,Invalidation,Flips the near-term view,Close beyond changes the bias
+ES,PLACEHOLDER — prior highs / measured-move targets,Resistance,Upside level / supply zone,Break + hold above confirms upside
+ES,PLACEHOLDER — prior swing lows / breakout retests,Support,Downside level / demand zone,Close below opens further downside
+ES,PLACEHOLDER — level that flips the near-term trend,Invalidation,Flips the near-term view,Close beyond changes the bias
