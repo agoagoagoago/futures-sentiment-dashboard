@@ -155,10 +155,17 @@ ${scoreBreakdown(es)}
 
 ## 7. Technical context
 
-> Live price data is not connected in this build. Levels below are placeholders for manual update.
+> Prices &amp; technicals are sourced live from Yahoo Finance (CL=F / ES=F) when reachable;
+> the technical sub-score is auto-computed. Other levels remain framework where noted.
 
-- **CL:** trend — ${cl.technicalContext.trend}; momentum — ${cl.technicalContext.momentum}; volatility — ${cl.technicalContext.volatility}.
-- **ES:** trend — ${es.technicalContext.trend}; momentum — ${es.technicalContext.momentum}; volatility — ${es.technicalContext.volatility}.
+${[cl, es]
+  .map((m) => {
+    const t = m.technicalContext;
+    const price = t.currentPrice != null ? t.currentPrice : "unavailable";
+    const src = m.live ? `${m.dataSource}, as of ${m.asOf}` : "stored snapshot (live feed unavailable)";
+    return `- **${m.symbol}:** price ${price}${t.dayChangePct != null ? ` (${t.dayChangePct >= 0 ? "+" : ""}${t.dayChangePct}% day)` : ""}; trend — ${t.trend}; 50-DMA ${t.sma50 ?? "—"} / 200-DMA ${t.sma200 ?? "—"}; RSI ${t.rsi ?? "—"}; vol — ${t.volatility}. _(${src})_`;
+  })
+  .join("\n")}
 
 ## 8. Positioning context
 

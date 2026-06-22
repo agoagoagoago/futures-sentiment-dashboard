@@ -8,9 +8,11 @@
  *
  * Run:  npm run refresh
  */
-import { readFileSync, writeFileSync } from "node:fs";
+import { writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { resolveBias, sumSubScores } from "../lib/scoring";
+import { getLiveMarket } from "../lib/liveMarket";
+import { getMarkets } from "../lib/data";
 import type { MarketSentiment } from "../lib/types";
 
 const DATA_DIR = join(process.cwd(), "data");
@@ -27,15 +29,19 @@ function stamp(): string {
   return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
 }
 
-function main() {
-  const markets: MarketSentiment[] = JSON.parse(readFileSync(JSON_PATH, "utf8"));
+async function main() {
   const now = stamp();
 
-  for (const m of markets) {
-    const score = sumSubScores(m.subScores);
-    m.sentimentScore = score;
-    m.bias = resolveBias(score, m.subScores);
-    m.lastUpdated = now;
+  // Fetch live technicals per market (graceful fallback inside getLiveMarket),
+  // then snapshot the result into the JSON. Recompute aggregate for safety.
+  const symbols = getMarkets().map((m) => m.symbol);
+  const markets: MarketSentiment[] = [];
+  for (const sym of symbols) {
+    const m = await getLiveMarket(sym);
+    m.sentimentScore = sumSubScores(m.subScores);
+    m.bias = resolveBias(m.sentimentScore, m.subScores);
+    if (!m.live) m.lastUpdated = now; // live runs already stamp asOf
+    markets.push(m);
   }
 
   writeFileSync(JSON_PATH, JSON.stringify(markets, null, 2) + "\n", "utf8");
@@ -109,9 +115,13 @@ function main() {
 
   console.log(`Refreshed ${markets.length} markets at ${now}:`);
   for (const m of markets) {
-    console.log(`  ${m.symbol}: score ${m.sentimentScore} -> ${m.bias} (confidence ${m.confidence})`);
+    const feed = m.live ? `live ${m.technicalContext.currentPrice}` : "snapshot (live unavailable)";
+    console.log(`  ${m.symbol}: score ${m.sentimentScore} -> ${m.bias} (confidence ${m.confidence}) [${feed}]`);
   }
   console.log("Regenerated: sentiment_scores.csv, market_drivers.csv, catalyst_calendar.csv, key_levels.csv");
 }
 
-main();
+main().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

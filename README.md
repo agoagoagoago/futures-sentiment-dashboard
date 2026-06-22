@@ -35,7 +35,32 @@ what would shift the view, and how confident the read is.
 - Tailwind CSS v4
 - React 19
 - `tsx` for running the TypeScript data/report scripts
-- No database, no required external APIs — fully Vercel-ready out of the box.
+- **Live price & technical data** from the Yahoo Finance chart API (`CL=F` / `ES=F`) — **keyless**.
+- No database. Fully Vercel-ready out of the box.
+
+## Live data
+
+Prices and technicals are fetched **server-side, live** and cached with Next.js ISR
+(`revalidate = 600` → ~10 minutes), so the site stays fresh on Vercel with no extra infra.
+
+- **Source:** Yahoo Finance chart API (`CL=F`, `ES=F`) — no API key required.
+- **Computed each render** (`lib/marketData.ts` + `lib/indicators.ts`): current price, day change,
+  50/200-day SMA, RSI(14), 20-day annualized realized volatility, swing support/resistance, trend
+  classification, and the invalidation level.
+- **Auto-scored** (`lib/scoring.ts` → `LIVE_SCORERS`): the **Technical trend** sub-score (both
+  markets) and the **Volatility / risk premium** sub-score (CL) are computed from these live
+  signals; the aggregate score and bias are recomputed via `sumSubScores` + `resolveBias`. All
+  other sub-scores stay manual until their feeds are added.
+- **Resilience:** the fetch tries `query1` then `query2` Yahoo hosts; if both fail, the page falls
+  back to the last stored snapshot, shows an amber "live feed unavailable" banner, and floors
+  confidence to Low. Note Yahoo's endpoint is unofficial and may rate-limit cloud IPs.
+
+### Adding more live feeds later
+
+CFTC positioning, FRED macro (USD/yields/VIX/credit), EIA inventories and news are intentionally
+left manual for now. To wire one in: add a fetcher (like `lib/marketData.ts`), map its signals,
+and register a scorer in the `LIVE_SCORERS` map in `lib/scoring.ts` keyed by the sub-score name —
+`getLiveMarket` will pick it up automatically.
 
 ## How the sentiment scoring works
 
@@ -73,10 +98,10 @@ Every sub-score carries `reasoning` (separating **observed** data from **inferen
 All content lives in **`data/market_sentiment.json`** — this is the single source of truth.
 
 1. Edit `data/market_sentiment.json`:
-   - Update each `subScores[].score` and `reasoning` based on current EIA/OPEC/IEA, Fed/BLS/BEA,
-     CFTC positioning, technicals, etc.
-   - Replace placeholder prices, support/resistance and invalidation levels in
-     `technicalContext`.
+   - Update each **manual** `subScores[].score` and `reasoning` (everything except the
+     live-computed Technical-trend / CL volatility sub-scores, which are overwritten at render).
+   - `technicalContext` (price, MAs, RSI, vol, support/resistance) is filled **live** — no manual
+     edits needed there.
    - Fill in real catalyst `date`s from the official calendars.
    - Set `positioning.available` to `true` and add detail once you have CFTC/options/flow data.
    - Adjust `confidence` to reflect data quality.
@@ -139,12 +164,13 @@ git push -u origin main
 
 ## Limitations
 
-- **No live price feed** — technical levels are placeholders for manual update.
+- **Live feed is prices & technicals only.** The Technical-trend (and CL volatility) sub-scores
+  are auto-computed; all other sub-scores remain **manual/framework** until their feeds are added.
+- **Yahoo Finance is an unofficial endpoint** — it can rate-limit cloud IPs. The app degrades
+  gracefully to the last stored snapshot, but live data is best-effort.
 - **No live positioning data** — exact CFTC COT, options skew/gamma, and fund flows are not wired
   in; positioning is framework-only until you add it.
 - **Catalyst dates are placeholders** — confirm against the official EIA/Fed/BLS/BEA calendars.
-- Sentiment scores in the shipped dataset are **illustrative placeholders**, not a live market
-  read. Update them before drawing conclusions.
 - Sentiment analysis is inherently subjective; corroborate across multiple independent sources.
 
 ## Disclaimer

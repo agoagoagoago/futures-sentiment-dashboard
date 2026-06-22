@@ -61,6 +61,12 @@ export interface TechnicalContext {
   momentum: string;
   volatility: string;
   invalidationLevels: (number | string)[];
+  // Live numeric fields (populated by getLiveMarket when the feed is reachable).
+  sma50?: number | null;
+  sma200?: number | null;
+  rsi?: number | null;
+  realizedVolPct?: number | null;
+  dayChangePct?: number | null;
 }
 
 export interface Positioning {
@@ -123,6 +129,14 @@ export interface MarketSentiment {
   confidence: Confidence;
   /** YYYY-MM-DD HH:mm; placeholder token until refreshed. */
   lastUpdated: string;
+  /** True when live price/technicals were successfully fetched this render. */
+  live?: boolean;
+  /** True when the live feed failed and stored snapshot values are shown. */
+  stale?: boolean;
+  /** Human-readable data source for the live read. */
+  dataSource?: string;
+  /** Timestamp of the live read (UTC). */
+  asOf?: string;
   summary: string;
   /** Macro / news / social narrative context blocks (free text). */
   macroContext: string;

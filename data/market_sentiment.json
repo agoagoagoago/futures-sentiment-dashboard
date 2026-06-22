@@ -2,10 +2,10 @@
   {
     "symbol": "CL",
     "name": "Crude Oil Futures (WTI)",
-    "sentimentScore": 12,
-    "bias": "Mildly bullish",
+    "sentimentScore": 6,
+    "bias": "Neutral",
     "confidence": "Low",
-    "lastUpdated": "2026-06-22 10:51",
+    "lastUpdated": "2026-06-22 03:31 UTC",
     "summary": "PLACEHOLDER ASSESSMENT. The numeric score, price levels and positioning figures below are illustrative placeholders, not live readings — replace them after reviewing current EIA/OPEC/IEA data and CFTC positioning. Structurally, crude sentiment is a tug-of-war between supply-side risk premium (OPEC+ policy, geopolitics, inventory draws) and demand-side caution (China growth, a firm USD, and global growth signals). With placeholder inputs the framework leans mildly bullish, but confidence is Low because no live data has been wired in for this run.",
     "macroContext": "Crude is highly sensitive to the U.S. dollar and real rates (a stronger USD and higher real yields are typically headwinds), to global growth expectations, and to China — the largest marginal importer. Watch DXY, the front-end of the U.S. curve, and China PMIs/imports. OBSERVED vs INFERRED: the directional sensitivities are observed/structural; the current magnitude is inferred and unquantified in this placeholder run.",
     "newsContext": "Energy newsflow is dominated by OPEC+ production decisions, geopolitical supply disruptions (Middle East, Russia sanctions, shipping/Strait risk), refinery outages and weekly inventory headlines. No single headline should drive the read — look for convergence across EIA data, OPEC/IEA reports and multiple wires.",
@@ -51,8 +51,8 @@
       {
         "name": "Technical trend",
         "score": 1,
-        "reasoning": "PLACEHOLDER. No live price wired in. Trend/levels are manual-update placeholders — do not trade off them. Update from CME/charting once price data is connected.",
-        "evidenceStrength": "Unavailable"
+        "reasoning": "OBSERVED (live): price < 50-DMA, price > 200-DMA, golden cross (50>200), RSI 30 soft. Auto-computed from Yahoo Finance daily data.",
+        "evidenceStrength": "High"
       },
       {
         "name": "News/social sentiment",
@@ -62,9 +62,9 @@
       },
       {
         "name": "Volatility / risk premium",
-        "score": 2,
-        "reasoning": "PLACEHOLDER. OVX-style implied vol and term-structure (backwardation vs contango) reflect supply tightness. INFERRED a mild risk premium. Update with current OVX and curve shape.",
-        "evidenceStrength": "Low"
+        "score": -4,
+        "reasoning": "OBSERVED (live): ~47% annualized realized vol (20d). Lower vol = steadier risk backdrop; higher vol = more two-way risk. Auto-computed from Yahoo Finance.",
+        "evidenceStrength": "Medium"
       },
       {
         "name": "Cross-market confirmation",
@@ -222,20 +222,27 @@
       }
     ],
     "technicalContext": {
-      "currentPrice": null,
-      "trend": "PLACEHOLDER — live price not connected (range assumed)",
+      "currentPrice": 75.74,
+      "trend": "Range",
       "supportLevels": [
-        "PLACEHOLDER — add prior swing lows / round numbers"
+        63.6,
+        61.87
       ],
       "resistanceLevels": [
-        "PLACEHOLDER — add prior swing highs / round numbers"
+        97,
+        101.67
       ],
-      "movingAverages": "PLACEHOLDER — note position vs 50/100/200-day once price is connected",
-      "momentum": "Unavailable — update RSI/MACD context manually",
-      "volatility": "Unavailable — update with OVX / ATR",
+      "movingAverages": "50-DMA 93.88 · 200-DMA 73.73 · price below 50-DMA, above 200-DMA",
+      "momentum": "Bearish (RSI 30)",
+      "volatility": "Very elevated (~47% annualized)",
       "invalidationLevels": [
-        "PLACEHOLDER — define the level that flips the near-term view"
-      ]
+        73.73
+      ],
+      "sma50": 93.88,
+      "sma200": 73.73,
+      "rsi": 30.5,
+      "realizedVolPct": 47.1,
+      "dayChangePct": 1.08
     },
     "positioning": {
       "summary": "Framework: monitor CFTC managed-money net length (crowding risk), producer/merchant hedging, options skew (calls vs puts), and energy-equity/ETF flows (e.g. XLE, USO). Crowded longs raise pullback risk; light positioning leaves room to rally.",
@@ -390,15 +397,19 @@
         "url": "https://www.cmegroup.com/markets/energy/crude-oil/light-sweet-crude.html",
         "date": "live"
       }
-    ]
+    ],
+    "live": true,
+    "stale": false,
+    "dataSource": "Yahoo Finance (CL=F)",
+    "asOf": "2026-06-22 03:31 UTC"
   },
   {
     "symbol": "ES",
     "name": "S&P 500 E-mini Futures",
-    "sentimentScore": 6,
-    "bias": "Neutral",
+    "sentimentScore": 12,
+    "bias": "Mildly bullish",
     "confidence": "Low",
-    "lastUpdated": "2026-06-22 10:51",
+    "lastUpdated": "2026-06-22 03:31 UTC",
     "summary": "PLACEHOLDER ASSESSMENT. The numeric score, index levels and positioning figures below are illustrative placeholders, not live readings — replace them after reviewing current earnings trends, Fed/rates pricing, inflation/labor data, breadth and volatility. Structurally, ES sentiment hinges on the interplay of earnings resilience and the rates/Fed backdrop, with mega-cap/AI leadership, breadth and liquidity as key swing factors. With placeholder inputs the framework reads roughly neutral; confidence is Low because no live data has been wired in.",
     "macroContext": "Equity-index sentiment is driven by the rates/discount-rate regime (Fed policy, real yields, the 10Y), the inflation path (CPI/PCE), and growth/labor data (NFP, ISM, GDP, jobless claims). Tighter financial conditions compress multiples; easing supports them. Watch the 2Y/10Y, financial-conditions indices and credit spreads.",
     "newsContext": "Newsflow centers on Fed communication, the inflation/labor data cycle, mega-cap earnings (especially AI capex narratives), and credit/liquidity headlines. Avoid over-weighting any single print or pundit — confirm across the data calendar and multiple outlets.",
@@ -449,9 +460,9 @@
       },
       {
         "name": "Technical trend",
-        "score": 3,
-        "reasoning": "PLACEHOLDER. No live price wired in. Trend/levels are manual-update placeholders. Update from CME/charting once price data is connected.",
-        "evidenceStrength": "Unavailable"
+        "score": 9,
+        "reasoning": "OBSERVED (live): price > 50-DMA, price > 200-DMA, golden cross (50>200), RSI 56 firm. Auto-computed from Yahoo Finance daily data.",
+        "evidenceStrength": "High"
       },
       {
         "name": "News/social sentiment",
@@ -629,20 +640,27 @@
       }
     ],
     "technicalContext": {
-      "currentPrice": null,
-      "trend": "PLACEHOLDER — live price not connected (uptrend assumed for framework)",
+      "currentPrice": 7539.25,
+      "trend": "Uptrend",
       "supportLevels": [
-        "PLACEHOLDER — prior swing lows / breakout retests"
+        7354.25,
+        7232.25
       ],
       "resistanceLevels": [
-        "PLACEHOLDER — prior highs / measured-move targets"
+        7540,
+        7584.5
       ],
-      "movingAverages": "PLACEHOLDER — note position vs 50/100/200-day once price is connected",
-      "momentum": "Unavailable — update RSI/MACD context manually",
-      "volatility": "Unavailable — update with VIX / ATR",
+      "movingAverages": "50-DMA 7352.26 · 200-DMA 6933.52 · price above 50-DMA, above 200-DMA",
+      "momentum": "Bullish (RSI 56)",
+      "volatility": "Subdued (~16% annualized)",
       "invalidationLevels": [
-        "PLACEHOLDER — level that flips the near-term trend"
-      ]
+        7352.26
+      ],
+      "sma50": 7352.26,
+      "sma200": 6933.52,
+      "rsi": 56.4,
+      "realizedVolPct": 16.4,
+      "dayChangePct": 25.44
     },
     "positioning": {
       "summary": "Framework: monitor CFTC futures positioning (asset managers vs leveraged funds), dealer gamma (pinning vs accelerant), index put/call activity, the VIX regime, fund flows and systematic exposure (CTA trend, vol-target). Stretched long/gamma-short setups raise air-pocket risk.",
@@ -822,6 +840,10 @@
         "url": "https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.html",
         "date": "live"
       }
-    ]
+    ],
+    "live": true,
+    "stale": false,
+    "dataSource": "Yahoo Finance (ES=F)",
+    "asOf": "2026-06-22 03:31 UTC"
   }
 ]

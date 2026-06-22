@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
-import { getMarkets } from "@/lib/data";
+import { getLiveMarkets } from "@/lib/liveMarket";
 import { biasFromScore, resolveBias, sumSubScores } from "@/lib/scoring";
 import type { Symbol } from "@/lib/types";
+
+export const revalidate = 600;
 
 /**
  * GET /api/sentiment            -> all markets
@@ -11,11 +13,12 @@ import type { Symbol } from "@/lib/types";
  * the API stays consistent with the scoring model even if the stored fields
  * drift before a refresh.
  */
-export function GET(request: Request) {
+export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const symbol = searchParams.get("symbol")?.toUpperCase() as Symbol | undefined;
 
-  const enriched = getMarkets().map((m) => {
+  const markets = await getLiveMarkets();
+  const enriched = markets.map((m) => {
     const computedScore = sumSubScores(m.subScores);
     return {
       ...m,

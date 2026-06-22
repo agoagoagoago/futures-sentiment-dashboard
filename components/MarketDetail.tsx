@@ -40,12 +40,27 @@ export default function MarketDetail({ market }: { market: MarketSentiment }) {
             <div className="text-xs uppercase tracking-wider text-zinc-500">{market.symbol}</div>
             <h1 className="text-2xl font-bold text-zinc-100">{market.name}</h1>
           </div>
-          <div className="flex items-center gap-3 text-xs">
+          <div className="flex items-center gap-2 flex-wrap text-xs">
             <span className="rounded-full bg-zinc-800 px-2 py-0.5 text-zinc-300">
               Confidence: {market.confidence}
             </span>
+            {market.live ? (
+              <span className="rounded-full bg-emerald-500/10 text-emerald-300 ring-1 ring-emerald-500/20 px-2 py-0.5">
+                ● Live · as of {market.asOf} · {market.dataSource}
+              </span>
+            ) : (
+              <span className="rounded-full bg-amber-500/10 text-amber-300 ring-1 ring-amber-500/20 px-2 py-0.5">
+                ● Snapshot · {market.dataSource ?? "stored values"}
+              </span>
+            )}
             <span className="text-zinc-500">Updated: {market.lastUpdated}</span>
           </div>
+          {market.stale && (
+            <p className="text-xs text-amber-300 rounded-md bg-amber-500/10 ring-1 ring-amber-500/20 px-3 py-2">
+              Live price feed is currently unavailable — showing the last stored snapshot.
+              Confidence reduced accordingly.
+            </p>
+          )}
           <p className="text-sm text-zinc-300 leading-relaxed">{market.summary}</p>
         </div>
         <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-4">
@@ -114,11 +129,29 @@ export default function MarketDetail({ market }: { market: MarketSentiment }) {
       {/* Technical context */}
       <Section title="Technical context">
         <div className="rounded-lg border border-zinc-800 bg-zinc-900/40 p-4 grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
-          <Field label="Current price" value={tech.currentPrice ?? "Unavailable (not connected)"} />
+          <Field
+            label="Current price"
+            value={
+              tech.currentPrice != null
+                ? `${tech.currentPrice.toLocaleString(undefined, { minimumFractionDigits: 2 })}${
+                    tech.dayChangePct != null
+                      ? `  (${tech.dayChangePct >= 0 ? "+" : ""}${tech.dayChangePct.toFixed(2)}% day)`
+                      : ""
+                  }`
+                : "Unavailable"
+            }
+          />
           <Field label="Trend" value={tech.trend} />
           <Field label="Momentum" value={tech.momentum} />
           <Field label="Volatility" value={tech.volatility} />
-          <Field label="Moving averages" value={tech.movingAverages ?? "—"} />
+          <Field label="50-DMA" value={tech.sma50 ?? "—"} />
+          <Field label="200-DMA" value={tech.sma200 ?? "—"} />
+          <Field label="RSI (14)" value={tech.rsi ?? "—"} />
+          <Field
+            label="Realized vol (20d)"
+            value={tech.realizedVolPct != null ? `${tech.realizedVolPct}% ann.` : "—"}
+          />
+          <Field label="MA context" value={tech.movingAverages ?? "—"} />
         </div>
         <KeyLevelsTable tech={tech} />
       </Section>

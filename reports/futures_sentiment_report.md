@@ -5,7 +5,7 @@
 > prices and positioning may be placeholder/illustrative until manually updated.
 > Verify all figures against primary sources before acting.
 
-_Generated from `data/market_sentiment.json`. Last updated: 2026-06-22 10:51._
+_Generated from `data/market_sentiment.json`. Last updated: 2026-06-22 03:31 UTC._
 
 ## 1. Executive summary
 
@@ -15,17 +15,17 @@ qualitative narrative, driver, positioning and catalyst analysis.
 
 | Market | Score | Bias | Confidence |
 | --- | ---: | --- | --- |
-| CL — Crude Oil Futures (WTI) | +12 | Mildly bullish | Low |
-| ES — S&P 500 E-mini Futures | +6 | Neutral | Low |
+| CL — Crude Oil Futures (WTI) | +6 | Neutral | Low |
+| ES — S&P 500 E-mini Futures | +12 | Mildly bullish | Low |
 
 ## 2. CL sentiment overview
 
 ### CL — Crude Oil Futures (WTI)
 
-- **Sentiment score:** +12 / 100
-- **Bias:** Mildly bullish
+- **Sentiment score:** +6 / 100
+- **Bias:** Neutral
 - **Confidence:** Low
-- **Last updated:** 2026-06-22 10:51
+- **Last updated:** 2026-06-22 03:31 UTC
 
 PLACEHOLDER ASSESSMENT. The numeric score, price levels and positioning figures below are illustrative placeholders, not live readings — replace them after reviewing current EIA/OPEC/IEA data and CFTC positioning. Structurally, crude sentiment is a tug-of-war between supply-side risk premium (OPEC+ policy, geopolitics, inventory draws) and demand-side caution (China growth, a firm USD, and global growth signals). With placeholder inputs the framework leans mildly bullish, but confidence is Low because no live data has been wired in for this run.
 
@@ -38,10 +38,10 @@ PLACEHOLDER ASSESSMENT. The numeric score, price levels and positioning figures 
 
 ### ES — S&P 500 E-mini Futures
 
-- **Sentiment score:** +6 / 100
-- **Bias:** Neutral
+- **Sentiment score:** +12 / 100
+- **Bias:** Mildly bullish
 - **Confidence:** Low
-- **Last updated:** 2026-06-22 10:51
+- **Last updated:** 2026-06-22 03:31 UTC
 
 PLACEHOLDER ASSESSMENT. The numeric score, index levels and positioning figures below are illustrative placeholders, not live readings — replace them after reviewing current earnings trends, Fed/rates pricing, inflation/labor data, breadth and volatility. Structurally, ES sentiment hinges on the interplay of earnings resilience and the rates/Fed backdrop, with mega-cap/AI leadership, breadth and liquidity as key swing factors. With placeholder inputs the framework reads roughly neutral; confidence is Low because no live data has been wired in.
 
@@ -54,8 +54,8 @@ PLACEHOLDER ASSESSMENT. The numeric score, index levels and positioning figures 
 
 | Dimension | CL | ES |
 | --- | --- | --- |
-| Score | +12 | +6 |
-| Bias | Mildly bullish | Neutral |
+| Score | +6 | +12 |
+| Bias | Neutral | Mildly bullish |
 | Confidence | Low | Low |
 | Dominant bullish driver | Geopolitical supply risk | Mega-cap / AI earnings & capex |
 | Dominant bearish driver | US dollar / real rates | Market breadth |
@@ -99,7 +99,7 @@ PLACEHOLDER ASSESSMENT. The numeric score, index levels and positioning figures 
 
 ## 6. Sentiment score breakdown
 
-#### CL sub-scores (aggregate +12 → Mildly bullish)
+#### CL sub-scores (aggregate +6 → Neutral)
 
 | Sub-score | Score | Evidence | Reasoning |
 | --- | ---: | --- | --- |
@@ -109,13 +109,13 @@ PLACEHOLDER ASSESSMENT. The numeric score, index levels and positioning figures 
 | OPEC+ / geopolitical risk | +5 | Low | PLACEHOLDER. OBSERVED: an active geopolitical risk premium (Middle East, sanctions, shipping) and OPEC+ policy optionality skew tail risks to the upside. Magnitude unquantified — update around OPEC+ meetings and live events. |
 | USD / rates pressure | -3 | Low | PLACEHOLDER. OBSERVED structural inverse link to USD and real rates. INFERRED a modest headwind. Update with current DXY and real-yield levels. |
 | Positioning | +2 | Unavailable | PLACEHOLDER. CFTC managed-money net length and producer hedging matter but EXACT NUMBERS ARE NOT AVAILABLE in this run. Update from the weekly CFTC COT report; treat as unavailable until then. |
-| Technical trend | +1 | Unavailable | PLACEHOLDER. No live price wired in. Trend/levels are manual-update placeholders — do not trade off them. Update from CME/charting once price data is connected. |
+| Technical trend | +1 | High | OBSERVED (live): price < 50-DMA, price > 200-DMA, golden cross (50>200), RSI 30 soft. Auto-computed from Yahoo Finance daily data. |
 | News/social sentiment | +1 | Unavailable | PLACEHOLDER. Convergence across wires/social NOT MEASURED in this run. Update after scanning multiple independent sources; avoid single-source signals. |
-| Volatility / risk premium | +2 | Low | PLACEHOLDER. OVX-style implied vol and term-structure (backwardation vs contango) reflect supply tightness. INFERRED a mild risk premium. Update with current OVX and curve shape. |
+| Volatility / risk premium | -4 | Medium | OBSERVED (live): ~47% annualized realized vol (20d). Lower vol = steadier risk backdrop; higher vol = more two-way risk. Auto-computed from Yahoo Finance. |
 | Cross-market confirmation | -1 | Low | PLACEHOLDER. Cross-checks vs energy equities (XLE), Brent–WTI spread and broad commodities. INFERRED slightly non-confirming. Update with live cross-asset reads. |
 
 
-#### ES sub-scores (aggregate +6 → Neutral)
+#### ES sub-scores (aggregate +12 → Mildly bullish)
 
 | Sub-score | Score | Evidence | Reasoning |
 | --- | ---: | --- | --- |
@@ -126,17 +126,18 @@ PLACEHOLDER ASSESSMENT. The numeric score, index levels and positioning figures 
 | Market breadth | -4 | Low | PLACEHOLDER. OBSERVED: leadership has at times been narrow (mega-cap concentration). INFERRED a drag/fragility flag. Update with advance/decline, % above 200-DMA, equal- vs cap-weighted spread. |
 | Volatility / credit conditions | +1 | Low | PLACEHOLDER. OBSERVED: low VIX + tight credit spreads = risk-on; spikes/widening = risk-off. INFERRED mildly benign. Update with VIX and IG/HY spreads. |
 | Positioning | -2 | Unavailable | PLACEHOLDER. CFTC futures positioning, dealer gamma, put/call and systematic (CTA/vol-target) exposure matter, but EXACT FIGURES ARE NOT AVAILABLE. Update from CFTC COT and options data; treat as unavailable until then. |
-| Technical trend | +3 | Unavailable | PLACEHOLDER. No live price wired in. Trend/levels are manual-update placeholders. Update from CME/charting once price data is connected. |
+| Technical trend | +9 | High | OBSERVED (live): price > 50-DMA, price > 200-DMA, golden cross (50>200), RSI 56 firm. Auto-computed from Yahoo Finance daily data. |
 | News/social sentiment | +1 | Unavailable | PLACEHOLDER. Convergence across outlets/social NOT MEASURED in this run. Update after scanning multiple independent sources. |
 | Liquidity / flows | +2 | Low | PLACEHOLDER. OBSERVED: financial conditions, reserves/liquidity and fund flows shape the bid. INFERRED mildly supportive. Update with FCI, fund-flow and liquidity proxies. |
 
 
 ## 7. Technical context
 
-> Live price data is not connected in this build. Levels below are placeholders for manual update.
+> Prices &amp; technicals are sourced live from Yahoo Finance (CL=F / ES=F) when reachable;
+> the technical sub-score is auto-computed. Other levels remain framework where noted.
 
-- **CL:** trend — PLACEHOLDER — live price not connected (range assumed); momentum — Unavailable — update RSI/MACD context manually; volatility — Unavailable — update with OVX / ATR.
-- **ES:** trend — PLACEHOLDER — live price not connected (uptrend assumed for framework); momentum — Unavailable — update RSI/MACD context manually; volatility — Unavailable — update with VIX / ATR.
+- **CL:** price 75.74 (+1.08% day); trend — Range; 50-DMA 93.88 / 200-DMA 73.73; RSI 30.5; vol — Very elevated (~47% annualized). _(Yahoo Finance (CL=F), as of 2026-06-22 03:31 UTC)_
+- **ES:** price 7539.25 (+25.44% day); trend — Uptrend; 50-DMA 7352.26 / 200-DMA 6933.52; RSI 56.4; vol — Subdued (~16% annualized). _(Yahoo Finance (ES=F), as of 2026-06-22 03:31 UTC)_
 
 ## 8. Positioning context
 

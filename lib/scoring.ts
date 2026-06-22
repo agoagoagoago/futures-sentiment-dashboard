@@ -89,6 +89,90 @@ export function scoreColor(score: number): string {
   return "text-zinc-300";
 }
 
+// ---------------------------------------------------------------------------
+// Live sub-score scorers
+//
+// Each scorer maps live signals to an integer in [-10, +10] and returns updated
+// reasoning. getLiveMarket applies LIVE_SCORERS to the sub-scores whose `name`
+// matches; all other sub-scores keep their manually-set values.
+// ---------------------------------------------------------------------------
+
+export interface LiveSignals {
+  price: number;
+  sma50: number | null;
+  sma200: number | null;
+  rsi: number | null;
+  realizedVolPct: number | null;
+  dayChangePct: number | null;
+}
+
+export interface ScoredSubScore {
+  score: number;
+  reasoning: string;
+  evidenceStrength: "Low" | "Medium" | "High" | "Unavailable";
+}
+
+/** Technical-trend sub-score from price vs 50/200-DMA alignment + RSI. */
+export function scoreTechnicalTrend(s: LiveSignals): ScoredSubScore {
+  const { price, sma50, sma200, rsi } = s;
+  if (sma50 == null || sma200 == null) {
+    return {
+      score: 0,
+      reasoning: "OBSERVED (live): insufficient history to compute 50/200-DMA; trend score held neutral.",
+      evidenceStrength: "Low",
+    };
+  }
+  let score = 0;
+  const parts: string[] = [];
+  if (price > sma50) { score += 3; parts.push("price > 50-DMA"); } else { score -= 3; parts.push("price < 50-DMA"); }
+  if (price > sma200) { score += 3; parts.push("price > 200-DMA"); } else { score -= 3; parts.push("price < 200-DMA"); }
+  if (sma50 > sma200) { score += 2; parts.push("golden cross (50>200)"); } else { score -= 2; parts.push("death cross (50<200)"); }
+  if (rsi != null) {
+    if (rsi >= 70) { score -= 1; parts.push(`RSI ${rsi.toFixed(0)} overbought`); }
+    else if (rsi <= 30) { score += 1; parts.push(`RSI ${rsi.toFixed(0)} oversold`); }
+    else if (rsi >= 55) { score += 1; parts.push(`RSI ${rsi.toFixed(0)} firm`); }
+    else if (rsi <= 45) { score -= 1; parts.push(`RSI ${rsi.toFixed(0)} soft`); }
+  }
+  return {
+    score: clamp(Math.round(score), -10, 10),
+    reasoning: `OBSERVED (live): ${parts.join(", ")}. Auto-computed from Yahoo Finance daily data.`,
+    evidenceStrength: "High",
+  };
+}
+
+/**
+ * Volatility/risk-premium sub-score from realized vol. Higher realized vol is
+ * treated as a mild negative for risk sentiment (more two-way / drawdown risk).
+ */
+export function scoreVolatilityFromVol(volPct: number | null): ScoredSubScore {
+  if (volPct == null) {
+    return {
+      score: 0,
+      reasoning: "OBSERVED (live): insufficient history to compute realized volatility.",
+      evidenceStrength: "Low",
+    };
+  }
+  let score: number;
+  if (volPct >= 45) score = -4;
+  else if (volPct >= 30) score = -2;
+  else if (volPct >= 18) score = 1;
+  else score = 3;
+  return {
+    score,
+    reasoning: `OBSERVED (live): ~${volPct.toFixed(0)}% annualized realized vol (20d). Lower vol = steadier risk backdrop; higher vol = more two-way risk. Auto-computed from Yahoo Finance.`,
+    evidenceStrength: "Medium",
+  };
+}
+
+/**
+ * Registry mapping a sub-score `name` to a live scorer. Only price-derived
+ * sub-scores are wired now; add CFTC/FRED/EIA scorers here as those feeds land.
+ */
+export const LIVE_SCORERS: Record<string, (s: LiveSignals) => ScoredSubScore> = {
+  "Technical trend": (s) => scoreTechnicalTrend(s),
+  "Volatility / risk premium": (s) => scoreVolatilityFromVol(s.realizedVolPct),
+};
+
 /** Tailwind classes for a directional-impact badge. */
 export function impactBadge(impact: string): string {
   switch (impact) {

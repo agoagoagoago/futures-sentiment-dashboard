@@ -1,0 +1,17 @@
+Add live price & technical data (Yahoo Finance) with ISR caching
+
+- lib/marketData.ts: keyless Yahoo chart fetch (CL=F/ES=F) with query1->query2
+  host fallback and a browser UA.
+- lib/indicators.ts: pure SMA/RSI/realized-vol/swing-levels/trend helpers.
+- lib/scoring.ts: LIVE_SCORERS registry auto-computes the Technical-trend (both)
+  and Volatility/risk-premium (CL) sub-scores from live signals.
+- lib/liveMarket.ts: overlays live technicals onto the static base, recomputes
+  aggregate score + bias, degrades gracefully to stored snapshot on feed failure.
+- Pages + /api/sentiment are async with ISR (revalidate=600); UI shows live
+  price/day-change/MAs/RSI/vol, a Live badge, and a stale banner.
+- refresh-sentiment & report scripts snapshot live values; README updated.
+- next.config: pin turbopack.root to silence parent-lockfile warning.
+
+Research only, not financial advice.
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>
