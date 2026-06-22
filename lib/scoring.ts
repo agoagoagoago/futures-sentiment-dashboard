@@ -165,6 +165,39 @@ export function scoreVolatilityFromVol(volPct: number | null): ScoredSubScore {
 }
 
 /**
+ * Social-sentiment sub-score from bullish/bearish message counts.
+ * Net ratio drives direction; sample volume drives magnitude and confidence.
+ * Applied directly in getLiveMarket (not via LIVE_SCORERS, which take prices).
+ */
+export function scoreSocialSentiment(counts: {
+  bullish: number;
+  bearish: number;
+  nativeTagged: number;
+}): ScoredSubScore {
+  const { bullish, bearish, nativeTagged } = counts;
+  const directional = bullish + bearish;
+  if (directional === 0) {
+    return {
+      score: 0,
+      reasoning: "OBSERVED (live): no directional social messages found in the latest StockTwits sample.",
+      evidenceStrength: "Low",
+    };
+  }
+  const net = (bullish - bearish) / directional; // -1..+1
+  // Dampen magnitude on small samples so a couple of posts can't dominate.
+  const volumeFactor = Math.min(1, directional / 20);
+  const score = clamp(Math.round(net * 10 * volumeFactor), -10, 10);
+  const evidenceStrength: ScoredSubScore["evidenceStrength"] =
+    nativeTagged >= 10 ? "High" : nativeTagged >= 3 || directional >= 15 ? "Medium" : "Low";
+  const pctBull = Math.round((bullish / directional) * 100);
+  return {
+    score,
+    reasoning: `OBSERVED (live): ${bullish} bullish / ${bearish} bearish across recent StockTwits messages (${pctBull}% bullish, ${nativeTagged} natively tagged). Auto-computed; small samples are dampened.`,
+    evidenceStrength,
+  };
+}
+
+/**
  * Registry mapping a sub-score `name` to a live scorer. Only price-derived
  * sub-scores are wired now; add CFTC/FRED/EIA scorers here as those feeds land.
  */

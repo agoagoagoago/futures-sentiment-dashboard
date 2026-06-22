@@ -2,14 +2,14 @@
   {
     "symbol": "CL",
     "name": "Crude Oil Futures (WTI)",
-    "sentimentScore": 6,
+    "sentimentScore": 2,
     "bias": "Neutral",
     "confidence": "Low",
-    "lastUpdated": "2026-06-22 03:31 UTC",
+    "lastUpdated": "2026-06-22 03:51 UTC",
     "summary": "PLACEHOLDER ASSESSMENT. The numeric score, price levels and positioning figures below are illustrative placeholders, not live readings — replace them after reviewing current EIA/OPEC/IEA data and CFTC positioning. Structurally, crude sentiment is a tug-of-war between supply-side risk premium (OPEC+ policy, geopolitics, inventory draws) and demand-side caution (China growth, a firm USD, and global growth signals). With placeholder inputs the framework leans mildly bullish, but confidence is Low because no live data has been wired in for this run.",
     "macroContext": "Crude is highly sensitive to the U.S. dollar and real rates (a stronger USD and higher real yields are typically headwinds), to global growth expectations, and to China — the largest marginal importer. Watch DXY, the front-end of the U.S. curve, and China PMIs/imports. OBSERVED vs INFERRED: the directional sensitivities are observed/structural; the current magnitude is inferred and unquantified in this placeholder run.",
     "newsContext": "Energy newsflow is dominated by OPEC+ production decisions, geopolitical supply disruptions (Middle East, Russia sanctions, shipping/Strait risk), refinery outages and weekly inventory headlines. No single headline should drive the read — look for convergence across EIA data, OPEC/IEA reports and multiple wires.",
-    "socialContext": "Retail/social discussion (StockTwits $CL_F, TradingView ideas, energy X/Twitter, r/oil and r/commodities) tends to amplify geopolitical spikes and inventory surprises. Treat as a contrarian/contextual signal only; do not rely on any single influencer or post. NOT MEASURED in this run — placeholder.",
+    "socialContext": "LIVE (StockTwits ($CL_F), as of 2026-06-22 03:51 UTC): 8 bullish / 14 bearish (36% bullish, 9 natively tagged) across 30 recent messages. Treat retail chatter as a contextual/contrarian signal, not a standalone one.",
     "whatWouldChange": "HIGHER: surprise OPEC+ cuts or extended quotas, sustained large inventory draws, a credible supply disruption, a weaker USD, or improving China demand. LOWER: OPEC+ unwinding cuts/raising output, persistent inventory builds, demand downgrades from EIA/IEA, a stronger USD/higher real rates, or a global growth scare.",
     "subScores": [
       {
@@ -56,9 +56,9 @@
       },
       {
         "name": "News/social sentiment",
-        "score": 1,
-        "reasoning": "PLACEHOLDER. Convergence across wires/social NOT MEASURED in this run. Update after scanning multiple independent sources; avoid single-source signals.",
-        "evidenceStrength": "Unavailable"
+        "score": -3,
+        "reasoning": "OBSERVED (live): 8 bullish / 14 bearish across recent StockTwits messages (36% bullish, 9 natively tagged). Auto-computed; small samples are dampened.",
+        "evidenceStrength": "Medium"
       },
       {
         "name": "Volatility / risk premium",
@@ -222,7 +222,7 @@
       }
     ],
     "technicalContext": {
-      "currentPrice": 75.74,
+      "currentPrice": 75.71,
       "trend": "Range",
       "supportLevels": [
         63.6,
@@ -242,7 +242,7 @@
       "sma200": 73.73,
       "rsi": 30.5,
       "realizedVolPct": 47.1,
-      "dayChangePct": 1.08
+      "dayChangePct": 1.04
     },
     "positioning": {
       "summary": "Framework: monitor CFTC managed-money net length (crowding risk), producer/merchant hedging, options skew (calls vs puts), and energy-equity/ETF flows (e.g. XLE, USO). Crowded longs raise pullback risk; light positioning leaves room to rally.",
@@ -401,19 +401,70 @@
     "live": true,
     "stale": false,
     "dataSource": "Yahoo Finance (CL=F)",
-    "asOf": "2026-06-22 03:31 UTC"
+    "asOf": "2026-06-22 03:51 UTC",
+    "social": {
+      "available": true,
+      "score": -3,
+      "bullish": 8,
+      "bearish": 14,
+      "neutral": 8,
+      "total": 30,
+      "nativeTagged": 9,
+      "symbolsUsed": [
+        "CL_F"
+      ],
+      "samples": [
+        {
+          "ticker": "CL_F",
+          "body": "$CL_F \n\nLooks like Trump won&#39;t even need to jawbone this at 7 AM. \n\nLife is good as an oil bear.",
+          "sentiment": "Bearish",
+          "createdAt": "2026-06-22T00:26:10Z",
+          "url": "https://stocktwits.com/symbol/CL_F"
+        },
+        {
+          "ticker": "CL_F",
+          "body": "$CL_F US is being run by idiots, they  are clueless and don&#39;t know how to make a deal.  Too many ppl r short this which is gonna add oil to the fire lol",
+          "sentiment": "Bullish",
+          "createdAt": "2026-06-21T23:40:08Z",
+          "url": "https://stocktwits.com/symbol/CL_F"
+        },
+        {
+          "ticker": "CL_F",
+          "body": "$CL_F $USO $CVX $XOM \n\nToo easy!",
+          "sentiment": "Bearish",
+          "createdAt": "2026-06-21T22:48:31Z",
+          "url": "https://stocktwits.com/symbol/CL_F"
+        },
+        {
+          "ticker": "CL_F",
+          "body": "$USO $SPY $XLE $CL_F  \n \nWTI up a buck at the open. Let the BS games begin.  \n.",
+          "sentiment": "Bullish",
+          "createdAt": "2026-06-21T22:26:43Z",
+          "url": "https://stocktwits.com/symbol/CL_F"
+        },
+        {
+          "ticker": "CL_F",
+          "body": "$USO $CL_F $SPY $DJT guarantee you Trump says something that causes a deal to be put in place. Wont be any escalation. It&#39;s all bluffs.",
+          "sentiment": "Neutral",
+          "createdAt": "2026-06-21T20:05:57Z",
+          "url": "https://stocktwits.com/symbol/CL_F"
+        }
+      ],
+      "source": "StockTwits ($CL_F)",
+      "asOf": "2026-06-22 03:51 UTC"
+    }
   },
   {
     "symbol": "ES",
     "name": "S&P 500 E-mini Futures",
-    "sentimentScore": 12,
+    "sentimentScore": 13,
     "bias": "Mildly bullish",
     "confidence": "Low",
-    "lastUpdated": "2026-06-22 03:31 UTC",
+    "lastUpdated": "2026-06-22 03:51 UTC",
     "summary": "PLACEHOLDER ASSESSMENT. The numeric score, index levels and positioning figures below are illustrative placeholders, not live readings — replace them after reviewing current earnings trends, Fed/rates pricing, inflation/labor data, breadth and volatility. Structurally, ES sentiment hinges on the interplay of earnings resilience and the rates/Fed backdrop, with mega-cap/AI leadership, breadth and liquidity as key swing factors. With placeholder inputs the framework reads roughly neutral; confidence is Low because no live data has been wired in.",
     "macroContext": "Equity-index sentiment is driven by the rates/discount-rate regime (Fed policy, real yields, the 10Y), the inflation path (CPI/PCE), and growth/labor data (NFP, ISM, GDP, jobless claims). Tighter financial conditions compress multiples; easing supports them. Watch the 2Y/10Y, financial-conditions indices and credit spreads.",
     "newsContext": "Newsflow centers on Fed communication, the inflation/labor data cycle, mega-cap earnings (especially AI capex narratives), and credit/liquidity headlines. Avoid over-weighting any single print or pundit — confirm across the data calendar and multiple outlets.",
-    "socialContext": "Retail/social discussion ($ES_F and $SPX on StockTwits, r/wallstreetbets, r/investing, FinTwit, TradingView) tends to swing with momentum and can mark sentiment extremes. Use as contextual/contrarian color only, never as a standalone signal. NOT MEASURED in this run — placeholder.",
+    "socialContext": "LIVE (StockTwits ($ES_F, $SPY, $SPX), as of 2026-06-22 03:51 UTC): 30 bullish / 21 bearish (59% bullish, 21 natively tagged) across 90 recent messages. Treat retail chatter as a contextual/contrarian signal, not a standalone one.",
     "whatWouldChange": "HIGHER: dovish Fed repricing / falling yields, cooling inflation with intact growth, broadening breadth, resilient mega-cap earnings, easing financial conditions, tight credit spreads. LOWER: hawkish repricing / rising real yields, inflation reacceleration, labor or growth deterioration, narrowing breadth, widening credit spreads, a volatility/liquidity shock.",
     "subScores": [
       {
@@ -466,9 +517,9 @@
       },
       {
         "name": "News/social sentiment",
-        "score": 1,
-        "reasoning": "PLACEHOLDER. Convergence across outlets/social NOT MEASURED in this run. Update after scanning multiple independent sources.",
-        "evidenceStrength": "Unavailable"
+        "score": 2,
+        "reasoning": "OBSERVED (live): 30 bullish / 21 bearish across recent StockTwits messages (59% bullish, 21 natively tagged). Auto-computed; small samples are dampened.",
+        "evidenceStrength": "High"
       },
       {
         "name": "Liquidity / flows",
@@ -640,27 +691,27 @@
       }
     ],
     "technicalContext": {
-      "currentPrice": 7539.25,
+      "currentPrice": 7540.5,
       "trend": "Uptrend",
       "supportLevels": [
         7354.25,
         7232.25
       ],
       "resistanceLevels": [
-        7540,
-        7584.5
+        7584.5,
+        7632.25
       ],
-      "movingAverages": "50-DMA 7352.26 · 200-DMA 6933.52 · price above 50-DMA, above 200-DMA",
+      "movingAverages": "50-DMA 7352.28 · 200-DMA 6933.52 · price above 50-DMA, above 200-DMA",
       "momentum": "Bullish (RSI 56)",
       "volatility": "Subdued (~16% annualized)",
       "invalidationLevels": [
-        7352.26
+        7352.28
       ],
-      "sma50": 7352.26,
+      "sma50": 7352.28,
       "sma200": 6933.52,
-      "rsi": 56.4,
+      "rsi": 56.5,
       "realizedVolPct": 16.4,
-      "dayChangePct": 25.44
+      "dayChangePct": 25.46
     },
     "positioning": {
       "summary": "Framework: monitor CFTC futures positioning (asset managers vs leveraged funds), dealer gamma (pinning vs accelerant), index put/call activity, the VIX regime, fund flows and systematic exposure (CTA trend, vol-target). Stretched long/gamma-short setups raise air-pocket risk.",
@@ -844,6 +895,59 @@
     "live": true,
     "stale": false,
     "dataSource": "Yahoo Finance (ES=F)",
-    "asOf": "2026-06-22 03:31 UTC"
+    "asOf": "2026-06-22 03:51 UTC",
+    "social": {
+      "available": true,
+      "score": 2,
+      "bullish": 30,
+      "bearish": 21,
+      "neutral": 39,
+      "total": 90,
+      "nativeTagged": 21,
+      "symbolsUsed": [
+        "ES_F",
+        "SPY",
+        "SPX"
+      ],
+      "samples": [
+        {
+          "ticker": "ES_F",
+          "body": "U.S., Iran agree on roadmap for final deal and plan to end military operations in Lebanon\nPUBLISHED SUN, JUN 21 202610:09 PM EDTUPDATED 34 MIN AGO\n\nMore FAKE 💩\n\n$SPY $ES_F $SPX",
+          "sentiment": "Neutral",
+          "createdAt": "2026-06-22T02:58:18Z",
+          "url": "https://stocktwits.com/symbol/ES_F"
+        },
+        {
+          "ticker": "ES_F",
+          "body": "$ES_F: Strong Reaction from the Daily Blue Box 📈   Daily view shows a powerful move higher from the Blue Box, allowing longs to secure risk‑free positions.  \n \n#Elliottwave #Trading #SPX #ES_F #Indices",
+          "sentiment": "Bullish",
+          "createdAt": "2026-06-22T00:58:56Z",
+          "url": "https://stocktwits.com/symbol/ES_F"
+        },
+        {
+          "ticker": "ES_F",
+          "body": "$ES_F 7500 continues act strong support $SPY $ES_F",
+          "sentiment": "Bullish",
+          "createdAt": "2026-06-22T00:32:23Z",
+          "url": "https://stocktwits.com/symbol/ES_F"
+        },
+        {
+          "ticker": "ES_F",
+          "body": "$ES_F Extends Higher After 3‑Wave Pullback 📈   Futures pushing up after a sharp corrective dip earlier this week. 1H structure maps the continuation path: elliottwave-forecast.com \n \n#elliottwave #trading #es_f #nasd...",
+          "sentiment": "Bullish",
+          "createdAt": "2026-06-22T00:09:05Z",
+          "url": "https://stocktwits.com/symbol/ES_F"
+        },
+        {
+          "ticker": "ES_F",
+          "body": "$ES_F move below 7500 could cause a avalanche down to 50sma $SPY $ES_F",
+          "sentiment": "Bearish",
+          "createdAt": "2026-06-21T23:44:48Z",
+          "url": "https://stocktwits.com/symbol/ES_F"
+        }
+      ],
+      "source": "StockTwits ($ES_F, $SPY, $SPX)",
+      "asOf": "2026-06-22 03:51 UTC"
+    }
   }
 ]

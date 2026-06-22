@@ -76,6 +76,30 @@ export interface Positioning {
   limitations: string;
 }
 
+export interface SocialSample {
+  ticker: string;
+  body: string;
+  sentiment: "Bullish" | "Bearish" | "Neutral";
+  createdAt: string;
+  url: string;
+}
+
+export interface SocialSentimentSummary {
+  available: boolean;
+  /** -10..+10 contribution to the News/social sub-score. */
+  score: number;
+  bullish: number;
+  bearish: number;
+  neutral: number;
+  total: number;
+  /** Messages that carried a native StockTwits Bullish/Bearish tag. */
+  nativeTagged: number;
+  symbolsUsed: string[];
+  samples: SocialSample[];
+  source: string;
+  asOf: string;
+}
+
 export interface Catalyst {
   /** YYYY-MM-DD; may be a placeholder pending manual update. */
   date: string;
@@ -150,6 +174,8 @@ export interface MarketSentiment {
   narratives: Narrative[];
   technicalContext: TechnicalContext;
   positioning: Positioning;
+  /** Live social sentiment (StockTwits). Undefined until fetched. */
+  social?: SocialSentimentSummary;
   catalysts: Catalyst[];
   scenarios: Scenarios;
   sources: Source[];

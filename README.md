@@ -36,6 +36,7 @@ what would shift the view, and how confident the read is.
 - React 19
 - `tsx` for running the TypeScript data/report scripts
 - **Live price & technical data** from the Yahoo Finance chart API (`CL=F` / `ES=F`) — **keyless**.
+- **Live social sentiment** from the StockTwits public API — **keyless**.
 - No database. Fully Vercel-ready out of the box.
 
 ## Live data
@@ -55,12 +56,31 @@ Prices and technicals are fetched **server-side, live** and cached with Next.js 
   back to the last stored snapshot, shows an amber "live feed unavailable" banner, and floors
   confidence to Low. Note Yahoo's endpoint is unofficial and may rate-limit cloud IPs.
 
+### Social sentiment (live)
+
+The **News/social sentiment** sub-score is computed live from the **StockTwits** public API
+(`lib/socialSentiment.ts`), aggregating several related tickers per market for a usable sample:
+
+- **CL** → `$CL_F`, `$USOIL`  ·  **ES** → `$ES_F`, `$SPY`, `$SPX`
+- Each message's sentiment uses StockTwits' **native Bullish/Bearish tag** when present; untagged
+  messages fall back to a small **bull/bear keyword lexicon**.
+- `scoreSocialSentiment` (`lib/scoring.ts`) maps the net bull/bear ratio to the −10..+10 sub-score,
+  **dampening small samples** so a couple of posts can't dominate, and sets evidence strength by
+  the number of natively tagged messages.
+- Cached ~15 min (`revalidate: 900`). If every StockTwits request fails (e.g. rate-limited), the
+  feed is marked unavailable, the sub-score keeps its stored value, and the UI shows a muted note.
+
+> StockTwits (like Yahoo) is a public endpoint and may rate-limit datacenter IPs. The graceful
+> fallback keeps the app working regardless.
+
 ### Adding more live feeds later
 
-CFTC positioning, FRED macro (USD/yields/VIX/credit), EIA inventories and news are intentionally
-left manual for now. To wire one in: add a fetcher (like `lib/marketData.ts`), map its signals,
-and register a scorer in the `LIVE_SCORERS` map in `lib/scoring.ts` keyed by the sub-score name —
-`getLiveMarket` will pick it up automatically.
+CFTC positioning, FRED macro (USD/yields/VIX/credit) and EIA inventories are intentionally left
+manual for now. To wire one in: add a fetcher (like `lib/marketData.ts` / `lib/socialSentiment.ts`),
+map its signals, and either register a price-style scorer in `LIVE_SCORERS` or apply it directly in
+`getLiveMarket` (as social does). To extend social itself, add a `fetchReddit` (free OAuth app)
+alongside `fetchSocial` and blend the counts, or pass recent messages to the Claude API for
+LLM-based scoring.
 
 ## How the sentiment scoring works
 
@@ -164,10 +184,13 @@ git push -u origin main
 
 ## Limitations
 
-- **Live feed is prices & technicals only.** The Technical-trend (and CL volatility) sub-scores
-  are auto-computed; all other sub-scores remain **manual/framework** until their feeds are added.
-- **Yahoo Finance is an unofficial endpoint** — it can rate-limit cloud IPs. The app degrades
-  gracefully to the last stored snapshot, but live data is best-effort.
+- **Live feeds are prices/technicals + social.** The Technical-trend, CL volatility, and
+  News/social sub-scores are auto-computed; the rest remain **manual/framework** until their feeds
+  are added.
+- **Yahoo Finance and StockTwits are unofficial/public endpoints** — they can rate-limit cloud
+  IPs. The app degrades gracefully to stored values, but live data is best-effort.
+- **Social sentiment is retail chatter** — a noisy, contrarian-leaning signal; small samples are
+  dampened but it should never be read in isolation.
 - **No live positioning data** — exact CFTC COT, options skew/gamma, and fund flows are not wired
   in; positioning is framework-only until you add it.
 - **Catalyst dates are placeholders** — confirm against the official EIA/Fed/BLS/BEA calendars.

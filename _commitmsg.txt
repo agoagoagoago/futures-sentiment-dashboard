@@ -1,16 +1,18 @@
-Add live price & technical data (Yahoo Finance) with ISR caching
+Add real social sentiment (StockTwits) as a live feed
 
-- lib/marketData.ts: keyless Yahoo chart fetch (CL=F/ES=F) with query1->query2
-  host fallback and a browser UA.
-- lib/indicators.ts: pure SMA/RSI/realized-vol/swing-levels/trend helpers.
-- lib/scoring.ts: LIVE_SCORERS registry auto-computes the Technical-trend (both)
-  and Volatility/risk-premium (CL) sub-scores from live signals.
-- lib/liveMarket.ts: overlays live technicals onto the static base, recomputes
-  aggregate score + bias, degrades gracefully to stored snapshot on feed failure.
-- Pages + /api/sentiment are async with ISR (revalidate=600); UI shows live
-  price/day-change/MAs/RSI/vol, a Live badge, and a stale banner.
-- refresh-sentiment & report scripts snapshot live values; README updated.
-- next.config: pin turbopack.root to silence parent-lockfile warning.
+- lib/socialSentiment.ts: keyless StockTwits fetch aggregating related tickers
+  per market (CL: CL_F/USOIL; ES: ES_F/SPY/SPX). Uses native Bullish/Bearish
+  tags, with a keyword-lexicon fallback for untagged messages. Per-ticker
+  Promise.allSettled so one ticker failing cannot sink the rest.
+- lib/scoring.ts: scoreSocialSentiment maps net bull/bear ratio to the -10..+10
+  News/social sub-score, dampening small samples and setting evidence strength
+  by native-tag volume.
+- lib/liveMarket.ts: price + social fetched in parallel; social overwrites the
+  News/social sub-score and socialContext; aggregate/bias recomputed after both.
+  Graceful fallback: if social fails, sub-score keeps its stored value.
+- components/SocialSentiment.tsx: bull/bear bar, counts, tickers, sample posts,
+  live badge; rendered in MarketDetail; compact social line on the home cards.
+- generate-report + README updated; types extended with SocialSentimentSummary.
 
 Research only, not financial advice.
 

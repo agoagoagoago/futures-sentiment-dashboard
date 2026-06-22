@@ -61,6 +61,18 @@ export default function MarketSentimentCard({ market }: Props) {
         <span className="text-zinc-500">Updated: {market.lastUpdated}</span>
       </div>
 
+      {market.social?.available && market.social.bullish + market.social.bearish > 0 && (
+        <div className="text-xs text-zinc-400">
+          Social:{" "}
+          <span className="text-emerald-400">
+            {Math.round((market.social.bullish / (market.social.bullish + market.social.bearish)) * 100)}% bull
+          </span>{" "}
+          <span className="text-zinc-500">
+            ({market.social.bullish}/{market.social.bearish} of {market.social.total} · StockTwits)
+          </span>
+        </div>
+      )}
+
       <p className="text-sm text-zinc-400 leading-relaxed line-clamp-4">{market.summary}</p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">

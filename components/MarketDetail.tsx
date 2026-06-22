@@ -7,6 +7,7 @@ import RiskPanel from "./RiskPanel";
 import KeyLevelsTable from "./KeyLevelsTable";
 import CatalystCalendar from "./CatalystCalendar";
 import SourceList from "./SourceList";
+import SocialSentiment from "./SocialSentiment";
 
 function Section({
   title,
@@ -179,8 +180,13 @@ export default function MarketDetail({ market }: { market: MarketSentiment }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
           <ContextBox label="Macro" body={market.macroContext} />
           <ContextBox label="News" body={market.newsContext} />
-          <ContextBox label="Social / media" body={market.socialContext} />
+          <SocialSentiment social={market.social} />
         </div>
+        {market.social?.available && (
+          <p className="text-xs text-zinc-500">
+            Narrative context: {market.socialContext}
+          </p>
+        )}
       </Section>
 
       {/* Catalysts */}

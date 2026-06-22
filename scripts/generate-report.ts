@@ -167,10 +167,23 @@ ${[cl, es]
   })
   .join("\n")}
 
-## 8. Positioning context
+## 8. Positioning & social sentiment
 
+**Positioning**
 - **CL:** ${cl.positioning.summary}\n  - _Limitation:_ ${cl.positioning.limitations}
 - **ES:** ${es.positioning.summary}\n  - _Limitation:_ ${es.positioning.limitations}
+
+**Social sentiment (live)**
+${[cl, es]
+  .map((m) => {
+    const s = m.social;
+    if (!s || !s.available)
+      return `- **${m.symbol}:** social feed unavailable in this run.`;
+    const dir = s.bullish + s.bearish;
+    const pct = dir > 0 ? Math.round((s.bullish / dir) * 100) : 50;
+    return `- **${m.symbol}:** ${s.bullish} bullish / ${s.bearish} bearish (${pct}% bullish, ${s.nativeTagged} natively tagged) across ${s.total} recent messages — ${s.source}, as of ${s.asOf}.`;
+  })
+  .join("\n")}
 
 ## 9. Key catalysts
 
